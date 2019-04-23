@@ -573,3 +573,66 @@ WHERE cid = '15-721'
 ORDER BY grade DESC, sid ASC;
 ```
 
+## Advanced SQL 
+
+### Data type in SQL 
+
+#### Built-in Data Types in SQL
+
+* date: Dates, containing a (4 digit) year, month and data. 
+  * Example: date '2005-7-27'
+* Time: Time of day, in hours, minutes and seconds.
+  * Example: time '09:00:30', time(2) '09:00:30.75'
+* Timestamp: A combination of date and time.
+  * Example: timestamp '2005-7-27 09:00:30.75'
+* interval: A period of time 
+  * Example: interval '1' day
+  * Subtracting a date/time/timestamp value from another gives an interval value (not suggested). 
+  * Interval values can be added to date/time/timestamp values 
+    * e.g., '2018-04-01 21:31:01' + INTERVAL 5 DAY 
+* Can extract values of individual fiels from date/time/timestamp 
+  * Example: **extract(year from** r.starttime)
+* Can cast string types to date/time/timestamp
+  * Example: cast <string-valued-expression> as date 
+  * Example: caste (<string-valued-expression>) as time) (MySQL)
+
+#### User-Defined Types 
+
+create type construct in SQL  create user-defined type: 
+
+* **create type** Dollars as numeric (12,2) final 
+* **create type** Pounds as numeric (12,2) final 
+  * An attempt to assign a value of type Dollars to a variable of type Pound results in a compile-time error, although both are of the same numeric type. 
+* **create domain** construct in SQL-92 creates user-defined domain types:
+* **create domain** person_name **char(20) not null** 
+* Types and domains are similar. Domains can have constraints, such as **not null**. specified on them. 
+
+#### Domain Constraints 
+
+* **Domain** constraints are the most elementary form of integrity constraint. They test values inserted in the database, and test queries to ensure that the comparisons make sense. 
+
+* New domains can be created from existing data types: 
+
+  * **create domain** Dollars **numeric(12, 2)**
+  * **create domain** Pounds **numeric(12,2)**
+
+* We cannot assign or compare a value of type Dollars to a value of type Pound s 
+
+  * However, we can convert type as below: 
+
+    **cast** (r.A as Pounds) (Should also multiply by the dollar-to-pond conversion-rate)
+
+* Large objects (photos, videos, CAD files,tc.) are stored as a large object: 
+
+  * **blob**: binary large object - object is a large collection of uninterpreted  binary data (whose interpretation is left to an application outside of the database system). 
+  * **clob**: character large object - object is a large collection of character data. 
+  * When a query returns a large object, a pointer is returned rather than the large object itself. 
+
+* Example: 
+
+  * book review **clob**(10 KB)
+  * image **blob** (10 MB) 
+  * movie **blob** (2 GB)
+
+#### Integrity Constraints 
+
