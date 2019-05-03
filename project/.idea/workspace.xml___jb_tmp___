@@ -34,7 +34,7 @@
     <session id="1986456965">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.opened" value="2" />
@@ -85,7 +85,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/data.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1" />
+            <state relative-caret-position="299">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -238,7 +240,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/data.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1" />
+        <state relative-caret-position="299">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+        </state>
       </provider>
     </entry>
   </component>
