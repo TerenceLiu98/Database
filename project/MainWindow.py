@@ -1,3 +1,4 @@
+#  _*_ coding: utf-8 _*_
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon, QFont
@@ -17,15 +18,15 @@ class Main(QMainWindow):
         self.layout = QHBoxLayout()
         self.widget = SignInWidget()
         self.resize(900, 600)
-        self.setWindowTitle("Library Management System")
+        self.setWindowTitle("Online Public Access Catalogue")
         self.setCentralWidget(self.widget)
         bar = self.menuBar()
-        self.Menu = bar.addMenu("Menu Bar")
+        self.Menu = bar.addMenu("Menu")
         self.signUpAction = QAction("Sign Up", self)
         self.changePasswordAction =QAction("Change Password",self)
-        self.signInAction = QAction("Sign in", self)
-        self.quitSignInAction = QAction("Sign out", self)
-        self.quitAction = QAction("Quit", self)
+        self.signInAction = QAction("Sign In", self)
+        self.quitSignInAction = QAction("Sign Out", self)
+        self.quitAction = QAction("Exit", self)
         self.Menu.addAction(self.signUpAction)
         self.Menu.addAction(self.changePasswordAction)
         self.Menu.addAction(self.signInAction)
@@ -81,7 +82,7 @@ class Main(QMainWindow):
             self.changePasswordAction.setEnabled(True)
             self.signInAction.setEnabled(False)
             self.quitSignInAction.setEnabled(False)
-        if (q.text() == "Sign Up"):
+        if (q.text() == "Sign In"):
             sip.delete(self.widget)
             self.widget = SignInWidget()
             self.setCentralWidget(self.widget)
@@ -91,7 +92,7 @@ class Main(QMainWindow):
             self.changePasswordAction.setEnabled(True)
             self.signInAction.setEnabled(False)
             self.quitSignInAction.setEnabled(False)
-        if (q.text() == "Quit"):
+        if (q.text() == "Exit"):
             qApp = QApplication.instance()
             qApp.quit()
         return
@@ -99,7 +100,7 @@ class Main(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/library.png"))
+    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = Main()
     mainMindow.show()

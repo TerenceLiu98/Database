@@ -1,4 +1,0 @@
-([('AdminHome',
-   '/Users/liujunjie/Nutstore_Files/Nutstore/Year Three Second '
-   'Semester/Database/project/LibraryManagementTool/dist/AdminHome',
-   'EXECUTABLE')],)

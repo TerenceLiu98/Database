@@ -14,7 +14,7 @@ class SignInWidget(QWidget):
     def __init__(self):
         super(SignInWidget, self).__init__()
         self.resize(900, 600)
-        self.setWindowTitle("Library Management System")
+        self.setWindowTitle("Online Public Access Catalogue")
         self.setUpUI()
 
     def setUpUI(self):
@@ -37,7 +37,7 @@ class SignInWidget(QWidget):
 
         self.formlayout.addRow(self.label1, self.lineEdit1)
 
-        self.label2 = QLabel("Password: ")
+        self.label2 = QLabel("Verification: ")
         self.label2.setFont(labelFont)
         self.lineEdit2 = QLineEdit()
         self.lineEdit2.setFixedHeight(32)
@@ -60,13 +60,13 @@ class SignInWidget(QWidget):
 
         self.lineEdit2.setEchoMode(QLineEdit.Password)
         self.formlayout.addRow(self.label2, self.lineEdit2)
-        self.signIn = QPushButton("登 录")
+        self.signIn = QPushButton("Sign In")
         self.signIn.setFixedWidth(80)
         self.signIn.setFixedHeight(30)
         self.signIn.setFont(labelFont)
         self.formlayout.addRow("", self.signIn)
 
-        self.label = QLabel("Library Management System")
+        self.label = QLabel("Online Public Access Catalogue")
         fontlabel = QFont()
         fontlabel.setPixelSize(30)
         self.label.setFixedWidth(390)
@@ -93,7 +93,7 @@ class SignInWidget(QWidget):
         studentId = self.lineEdit1.text()
         password = self.lineEdit2.text()
         if (studentId == "" or password == ""):
-            print(QMessageBox.warning(self, "Warning", "No Blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "No blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 打开数据库连接
         db = QSqlDatabase.addDatabase("QSQLITE")
@@ -107,7 +107,7 @@ class SignInWidget(QWidget):
         hl = hashlib.md5()
         hl.update(password.encode(encoding='utf-8'))
         if (not query.next()):
-            print(QMessageBox.information(self, "Account not exist!", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.information(self, "Alert!", "ID is not exsit", QMessageBox.Yes, QMessageBox.Yes))
         else:
             if (studentId == query.value(0) and hl.hexdigest() == query.value(2)):
                 # 如果是管理员
@@ -116,13 +116,13 @@ class SignInWidget(QWidget):
                 else:
                     self.is_student_signal.emit(studentId)
             else:
-                print(QMessageBox.information(self, "incorrect password!", QMessageBox.Yes, QMessageBox.Yes))
+                print(QMessageBox.information(self, "Alert!", "Wrong Password", QMessageBox.Yes, QMessageBox.Yes))
         return
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/library.png"))
+    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = SignInWidget()
     mainMindow.show()

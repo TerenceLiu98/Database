@@ -15,7 +15,7 @@ class StudentHome(QWidget):
         super().__init__()
         self.StudentId = studentId
         self.resize(900, 600)
-        self.setWindowTitle("Library Management System")
+        self.setWindowTitle("欢迎使用图书馆管理系统")
         self.setUpUI()
 
     def setUpUI(self):
@@ -24,10 +24,10 @@ class StudentHome(QWidget):
         # 按钮布局
         self.buttonLayout = QVBoxLayout()
         # 按钮
-        self.borrowBookButton = QPushButton("Borrow Book")
-        self.returnBookButton = QPushButton("Return Book")
-        self.myBookStatus = QPushButton("My Loans")
-        self.allBookButton = QPushButton("Books")
+        self.borrowBookButton = QPushButton("借书")
+        self.returnBookButton = QPushButton("还书")
+        self.myBookStatus = QPushButton("借阅状态")
+        self.allBookButton = QPushButton("所有书籍")
         self.buttonLayout.addWidget(self.borrowBookButton)
         self.buttonLayout.addWidget(self.returnBookButton)
         self.buttonLayout.addWidget(self.myBookStatus)
@@ -97,7 +97,7 @@ class StudentHome(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/library.png"))
+    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = StudentHome("PB15000135")
     mainMindow.show()

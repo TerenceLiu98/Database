@@ -16,7 +16,7 @@ class SignUpWidget(QWidget):
 
     def setUpUI(self):
         self.resize(900, 600)
-        self.setWindowTitle("Library Management System")
+        self.setWindowTitle("OPAC")
         self.signUpLabel = QLabel("Sign Up")
         self.signUpLabel.setAlignment(Qt.AlignCenter)
         # self.signUpLabel.setFixedWidth(300)
@@ -37,7 +37,7 @@ class SignUpWidget(QWidget):
         self.studentIdLabel = QLabel("Student ID: ")
         self.studentIdLabel.setFont(font)
         self.studentIdLineEdit = QLineEdit()
-        self.studentIdLineEdit.setFixedWidth(180)
+        self.studentIdLineEdit.setFixedWidth(200)
         self.studentIdLineEdit.setFixedHeight(32)
         self.studentIdLineEdit.setFont(lineEditFont)
         self.studentIdLineEdit.setMaxLength(10)
@@ -67,7 +67,7 @@ class SignUpWidget(QWidget):
         self.formlayout.addRow(self.passwordLabel, self.passwordLineEdit)
 
         # Row4
-        self.passwordConfirmLabel = QLabel("Confirm Your Password: ")
+        self.passwordConfirmLabel = QLabel("Confirm: ")
         self.passwordConfirmLabel.setFont(font)
         self.passwordConfirmLineEdit = QLineEdit()
         self.passwordConfirmLineEdit.setFixedWidth(180)
@@ -78,7 +78,7 @@ class SignUpWidget(QWidget):
         self.formlayout.addRow(self.passwordConfirmLabel, self.passwordConfirmLineEdit)
 
         # Row5
-        self.signUpbutton = QPushButton("Sign Up")
+        self.signUpbutton = QPushButton("Sign Up!")
         self.signUpbutton.setFixedWidth(120)
         self.signUpbutton.setFixedHeight(30)
         self.signUpbutton.setFont(font)
@@ -115,7 +115,7 @@ class SignUpWidget(QWidget):
         password = self.passwordLineEdit.text()
         confirmPassword = self.passwordConfirmLineEdit.text()
         if (studentId == "" or studentName == "" or password == "" or confirmPassword == ""):
-            print(QMessageBox.warning(self, "Warning", "No Blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "No blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
             return
         else:  # 需要处理逻辑，1.账号已存在;2.密码不匹配;3.插入user表
             db = QSqlDatabase.addDatabase("QSQLITE")
@@ -123,7 +123,7 @@ class SignUpWidget(QWidget):
             db.open()
             query = QSqlQuery()
             if (confirmPassword != password):
-                print(QMessageBox.warning(self, "Wrong Password", QMessageBox.Yes, QMessageBox.Yes))
+                print(QMessageBox.warning(self, "Alert!", "Your password does not match.", QMessageBox.Yes, QMessageBox.Yes))
                 return
             elif (confirmPassword == password):
                 # md5编码
@@ -133,14 +133,14 @@ class SignUpWidget(QWidget):
                 sql = "SELECT * FROM user WHERE StudentId='%s'" % (studentId)
                 query.exec_(sql)
                 if (query.next()):
-                    print(QMessageBox.warning(self, "Warning!", "Id is existed!", QMessageBox.Yes, QMessageBox.Yes))
+                    print(QMessageBox.warning(self, "Account is existed", QMessageBox.Yes, QMessageBox.Yes))
                     return
                 else:
                     sql = "INSERT INTO user VALUES ('%s','%s','%s',0,0,0)" % (
                         studentId, studentName, md5password)
                     db.exec_(sql)
                     db.commit()
-                    print(QMessageBox.information(self, "Register Success!", QMessageBox.Yes, QMessageBox.Yes))
+                    print(QMessageBox.information(self, "Sign up seccuessfully!", QMessageBox.Yes, QMessageBox.Yes))
                     self.student_signup_signal.emit(studentId)
                 db.close()
                 return
@@ -148,7 +148,7 @@ class SignUpWidget(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/library.png"))
+    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = SignUpWidget()
     mainMindow.show()

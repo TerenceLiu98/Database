@@ -1,5 +1,0 @@
-StudentId,Name,Password,sex,keshi,IsAdmin,NumBorrowed
-admin,"管理员",e10adc3949ba59abbe56e057f20f883e,"男","图书馆",1,0
-l630005038,Terence Lau,2c2f0322f95d293a12185a21387dbac8,"女","STAT",0,0
-l630005058,Chris Yao,f4cb63a3a73516a8e699056765cd72ca,"男","STAT",0,0
-l630005057,Ryan Yang,e10adc3949ba59abbe56e057f20f883e,"男","STAT",0,0
