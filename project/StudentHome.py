@@ -8,8 +8,6 @@ from BookStorageViewer import BookStorageViewer
 from borrowBookDialog import borrowBookDialog
 from returnBookDialog import returnBookDialog
 from BorrowStatusViewer import BorrowStatusViewer
-from GroupViewer import GroupViewer
-from InterestGroup import InterestGroup
 
 
 class StudentHome(QWidget):
@@ -33,25 +31,23 @@ class StudentHome(QWidget):
         self.buttonLayout.addWidget(self.borrowBookButton)
         self.buttonLayout.addWidget(self.returnBookButton)
         self.buttonLayout.addWidget(self.myBookStatus)
-        self.buttonLayout.addWidget(self.InterestGroupButton)
         self.borrowBookButton.setFixedWidth(100)
         self.borrowBookButton.setFixedHeight(42)
         self.returnBookButton.setFixedWidth(100)
         self.returnBookButton.setFixedHeight(42)
         self.myBookStatus.setFixedWidth(100)
         self.myBookStatus.setFixedHeight(42)
-        self.InterestGroupButton.setFixedWidth(100)
-        self.InterestGroupButton.setFixedHeight(42)
+
         font = QFont()
         font.setPixelSize(16)
         self.borrowBookButton.setFont(font)
         self.returnBookButton.setFont(font)
         self.myBookStatus.setFont(font)
-        self.InterestGroupButton.setFont(font)
+
 
         self.storageView = BookStorageViewer()
         self.borrowStatusView=BorrowStatusViewer(self.StudentId)
-        self.InterestGroupButton.setEnabled(True)
+
 
         self.layout.addLayout(self.buttonLayout)
         self.layout.addWidget(self.storageView)
@@ -59,7 +55,7 @@ class StudentHome(QWidget):
         self.borrowBookButton.clicked.connect(self.borrowBookButtonClicked)
         self.returnBookButton.clicked.connect(self.returnBookButtonClicked)
         self.myBookStatus.clicked.connect(self.myBookStatusClicked)
-        self.InterestGroupButton.clicked.connect(self.InterestGroupButtonclicked)
+
 
     def borrowBookButtonClicked(self):
         borrowDialog = borrowBookDialog(self.StudentId,self)
@@ -78,14 +74,6 @@ class StudentHome(QWidget):
         returnDialog.exec_()
         return
 
-    def InterestGroupButtonclicked(self):
-        Group = InterestGroup(self.StudentId, self)
-        Group.group_success_signal.connect(self.GroupViewer.memberQuery)
-        Group.group_success_signal.connect(self.GroupViewer.notmemberQuery)
-        Group.group_success_signal.connect(self.InterestGroupButtonclicked)
-        Group.show()
-        Group.exec_()
-        return
 
     def myBookStatusClicked(self):
         self.layout.removeWidget(self.storageView)

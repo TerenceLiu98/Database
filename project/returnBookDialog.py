@@ -112,7 +112,7 @@ class returnBookDialog(QDialog):
         BookId = self.bookIdEdit.text()
         # BookId为空的处理
         if (BookId == ""):
-            print(QMessageBox.warning(self, "Book does not exist", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Alert!","Book does not exist", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 打开数据库
         db = db = QSqlDatabase.addDatabase("QSQLITE")
@@ -123,7 +123,7 @@ class returnBookDialog(QDialog):
         sql = "SELECT * FROM User_Book WHERE StudentId='%s' AND BookId='%s' AND BorrowState=1" %(self.studentId,BookId)
         query.exec_(sql)
         if (not query.next()):
-            print(QMessageBox.information(self, "Book has not been borrowed", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.information(self, "Alert", "Book has not been borrowed", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 更新User表
         sql = "UPDATE User SET NumBorrowed=NumBorrowed-1 WHERE StudentId='%s'" % self.studentId
@@ -138,7 +138,7 @@ class returnBookDialog(QDialog):
         sql = "UPDATE User_Book SET ReturnTime='%s',BorrowState=0 WHERE StudentId='%s' AND BookId='%s' AND BorrowState=1" % (timenow,self.studentId,BookId)
         query.exec_(sql)
         db.commit()
-        print(QMessageBox.information(self, "Success!", QMessageBox.Yes, QMessageBox.Yes))
+        print(QMessageBox.information(self, "Yes", "Success!", QMessageBox.Yes, QMessageBox.Yes))
         self.return_book_success_signal.emit()
         self.close()
         return
