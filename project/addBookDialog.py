@@ -14,7 +14,7 @@ class addBookDialog(QDialog):
         super(addBookDialog, self).__init__(parent)
         self.setUpUI()
         self.setWindowModality(Qt.WindowModal)
-        self.setWindowTitle("Add Book")
+        self.setWindowTitle("添加书籍")
 
     def setUpUI(self):
         # 书名，书号，作者，分类，添加数量.出版社,出版日期
@@ -24,7 +24,6 @@ class addBookDialog(QDialog):
         self.resize(300, 400)
         self.layout = QFormLayout()
         self.setLayout(self.layout)
-
 
         # Label控件
         self.titlelabel = QLabel("Add Book")
@@ -52,11 +51,11 @@ class addBookDialog(QDialog):
         # self.publishDateEdit = QLineEdit()
         self.addNumEdit = QLineEdit()
 
-        self.bookNameEdit.setMaxLength(10)
-        self.bookIdEdit.setMaxLength(6)
-        self.authNameEdit.setMaxLength(10)
-        self.publisherEdit.setMaxLength(10)
-        self.addNumEdit.setMaxLength(12)
+        self.bookNameEdit.setMaxLength(100)
+        self.bookIdEdit.setMaxLength(100)
+        self.authNameEdit.setMaxLength(100)
+        self.publisherEdit.setMaxLength(100)
+        self.addNumEdit.setMaxLength(100)
         self.addNumEdit.setValidator(QIntValidator())
 
         # 添加进formlayout
@@ -101,9 +100,9 @@ class addBookDialog(QDialog):
         self.titlelabel.setMargin(8)
         self.layout.setVerticalSpacing(10)
 
-        self.addBookButton.clicked.connect(self.addBookButtonCicked)
+        self.addBookButton.clicked.connect(self.addBookButtonClicked)
 
-    def addBookButtonCicked(self):
+    def addBookButtonClicked(self):
         bookName = self.bookNameEdit.text()
         bookId = self.bookIdEdit.text()
         authName = self.authNameEdit.text()
@@ -137,7 +136,7 @@ class addBookDialog(QDialog):
             sql = "INSERT INTO buyordrop VALUES ('%s','%s',1,%d)" % (bookId, timenow, addBookNum)
             query.exec_(sql)
             db.commit()
-            print(QMessageBox.information(self, "Operation Success!", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.information(self,"Yes", "operation Success!", QMessageBox.Yes, QMessageBox.Yes))
             self.add_book_success_signal.emit()
             self.close()
             self.clearEdit()

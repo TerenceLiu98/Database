@@ -14,29 +14,29 @@ class dropBookDialog(QDialog):
         super(dropBookDialog, self).__init__(parent)
         self.setUpUI()
         self.setWindowModality(Qt.WindowModal)
-        self.setWindowTitle("删除书籍")
+        self.setWindowTitle("Remove Books")
 
     def setUpUI(self):
         # 书名，书号，作者，分类，添加数量.出版社,出版日期
         # 书籍分类：哲学类、社会科学类、政治类、法律类、军事类、经济类、文化类、教育类、体育类、语言文字类、艺术类、历史类、地理类、天文学类、生物学类、医学卫生类、农业类
-        BookCategory = ["哲学", "社会科学", "政治", "法律", "军事", "经济", "文化", "教育", "体育", "语言文字", "艺术", "历史"
-            , "地理", "天文学", "生物学", "医学卫生", "农业"]
+        BookCategory = ["Philosophy", "Social Science", "Politics", "legislation", "Military", "Economics", "Culture", "Education",
+"Linguistics", "Art", "History", "geography", "Astronomy"]
         self.resize(300, 400)
         self.layout = QFormLayout()
         self.setLayout(self.layout)
 
         # Label控件
-        self.titlelabel = QLabel("  淘汰书籍")
-        self.bookNameLabel = QLabel("书    名:")
-        self.bookIdLabel = QLabel("书    号:")
-        self.authNameLabel = QLabel("作    者:")
-        self.categoryLabel = QLabel("分    类:")
-        self.publisherLabel = QLabel("出 版 社:")
-        self.publishDateLabel = QLabel("出版日期:")
-        self.dropNumLabel = QLabel("数    量:")
+        self.titlelabel = QLabel("Remove Books")
+        self.bookNameLabel = QLabel("Name:")
+        self.bookIdLabel = QLabel("ID:")
+        self.authNameLabel = QLabel("Author:")
+        self.categoryLabel = QLabel("Category:")
+        self.publisherLabel = QLabel("Press:")
+        self.publishDateLabel = QLabel("Date:")
+        self.dropNumLabel = QLabel("Quantity:")
 
         # button控件
-        self.dropBookButton = QPushButton("淘 汰")
+        self.dropBookButton = QPushButton("Remove")
 
         # lineEdit控件
         self.bookNameEdit = QLineEdit()
@@ -136,7 +136,7 @@ class dropBookDialog(QDialog):
         bookId = self.bookIdEdit.text()
         dropNum = 0
         if (self.dropNumEdit.text() == ""):
-            print(QMessageBox.warning(self, "警告", "淘汰数目为空，请检查输入，操作失败"), QMessageBox.Yes, QMessageBox.Yes)
+            print(QMessageBox.warning(self, "Alert", "Empty blank is not allowed"), QMessageBox.Yes, QMessageBox.Yes)
             return
         dropNum = int(self.dropNumEdit.text())
         db = QSqlDatabase.addDatabase("QSQLITE")
@@ -147,7 +147,7 @@ class dropBookDialog(QDialog):
         query.exec_(sql)
         if (query.next()):
             if (dropNum > query.value(7) or dropNum < 0):
-                print(QMessageBox.warning(self, "警告", "最多可淘汰%d本，请检查输入" % (query.value(7)), QMessageBox.Yes,
+                print(QMessageBox.warning(self, "Alert", "Only %d books" % (query.value(7)), QMessageBox.Yes,
                                           QMessageBox.Yes))
                 return
         # 更新Book表和BuyorDrop表
@@ -164,7 +164,7 @@ class dropBookDialog(QDialog):
         sql = "INSERT INTO buyordrop VALUES ('%s','%s',0,%d)" % (bookId, timenow, dropNum)
         query.exec_(sql)
         db.commit()
-        print(QMessageBox.information(self, "提示", "淘汰书籍成功!", QMessageBox.Yes, QMessageBox.Yes))
+        print(QMessageBox.information(self, "Yes", "Success!", QMessageBox.Yes, QMessageBox.Yes))
         self.drop_book_successful_signal.emit()
         self.close()
         return

@@ -7,6 +7,8 @@ from addBookDialog import addBookDialog
 from dropBookDialog import dropBookDialog
 from BookStorageViewer import BookStorageViewer
 from UserManage import UserManage
+from GroupViewer import GroupViewer
+from InterestGroup import InterestGroup
 
 class AdminHome(QWidget):
     def __init__(self):
@@ -25,18 +27,23 @@ class AdminHome(QWidget):
         self.userManageButton = QPushButton("User Management")
         self.addBookButton = QPushButton("Add Books")
         self.dropBookButton = QPushButton("Remove Books")
+        self.InterestGroupbuttonButton = QPushButton("Groups")
         self.userManageButton.setFont(font)
         self.addBookButton.setFont(font)
         self.dropBookButton.setFont(font)
+        self.InterestGroupbuttonButton.setFont(font)
         self.userManageButton.setFixedWidth(200)
         self.userManageButton.setFixedHeight(42)
         self.addBookButton.setFixedWidth(200)
         self.addBookButton.setFixedHeight(42)
         self.dropBookButton.setFixedWidth(200)
         self.dropBookButton.setFixedHeight(42)
+        self.InterestGroupbuttonButton.setFixedWidth(200)
+        self.InterestGroupbuttonButton.setFixedHeight(42)
         self.buttonlayout.addWidget(self.addBookButton)
         self.buttonlayout.addWidget(self.dropBookButton)
         self.buttonlayout.addWidget(self.userManageButton)
+        self.buttonlayout.addWidget(self.InterestGroupbuttonButton)
         self.layout.addLayout(self.buttonlayout)
         self.storageView = BookStorageViewer()
         self.layout.addWidget(self.storageView)
@@ -44,6 +51,7 @@ class AdminHome(QWidget):
         self.addBookButton.clicked.connect(self.addBookButtonClicked)
         self.dropBookButton.clicked.connect(self.dropBookButtonClicked)
         self.userManageButton.clicked.connect(self.userManage)
+        self.InterestGroupButton.clicked.connect(self.InterestGroupButtonclicked)
 
     def addBookButtonClicked(self):
         addDialog = addBookDialog(self)
@@ -61,6 +69,12 @@ class AdminHome(QWidget):
         UserDelete=UserManage(self)
         UserDelete.show()
         UserDelete.exec_()
+
+    def InterestGroupbuttonclicked(self):
+        InterestGroup = InterestGroupbuttonclicked(self)
+        InterestGroup = group_success_signal.connect(self.InterestGroupButtonclicked)
+        groupDialog.show()
+        groupDialog.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -15,14 +15,14 @@ class SignUpWidget(QWidget):
         self.setUpUI()
 
     def setUpUI(self):
-        self.resize(900, 600)
+        self.resize(300, 400)
         self.setWindowTitle("OPAC")
         self.signUpLabel = QLabel("Sign Up")
         self.signUpLabel.setAlignment(Qt.AlignCenter)
         # self.signUpLabel.setFixedWidth(300)
         self.signUpLabel.setFixedHeight(100)
         font = QFont()
-        font.setPixelSize(36)
+        font.setPixelSize(30)
         lineEditFont = QFont()
         lineEditFont.setPixelSize(16)
         self.signUpLabel.setFont(font)
@@ -32,15 +32,15 @@ class SignUpWidget(QWidget):
         self.setLayout(self.layout)
         # 表单，包括学号，姓名，密码，确认密码
         self.formlayout = QFormLayout()
-        font.setPixelSize(18)
+        font.setPixelSize(15)
         # Row1
         self.studentIdLabel = QLabel("Student ID: ")
         self.studentIdLabel.setFont(font)
         self.studentIdLineEdit = QLineEdit()
-        self.studentIdLineEdit.setFixedWidth(200)
+        self.studentIdLineEdit.setFixedWidth(180)
         self.studentIdLineEdit.setFixedHeight(32)
         self.studentIdLineEdit.setFont(lineEditFont)
-        self.studentIdLineEdit.setMaxLength(10)
+        self.studentIdLineEdit.setMaxLength(15)
         self.formlayout.addRow(self.studentIdLabel, self.studentIdLineEdit)
 
         # Row2

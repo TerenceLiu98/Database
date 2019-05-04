@@ -23,7 +23,7 @@ class SignInWidget(QWidget):
         self.Hlayout2 = QHBoxLayout()
         self.formlayout = QFormLayout()
 
-        self.label1 = QLabel("Student ID: ")
+        self.label1 = QLabel("StudentID:")
         labelFont = QFont()
         labelFont.setPixelSize(18)
         lineEditFont = QFont()
@@ -37,12 +37,12 @@ class SignInWidget(QWidget):
 
         self.formlayout.addRow(self.label1, self.lineEdit1)
 
-        self.label2 = QLabel("Verification: ")
+        self.label2 = QLabel("Verification:")
         self.label2.setFont(labelFont)
         self.lineEdit2 = QLineEdit()
         self.lineEdit2.setFixedHeight(32)
         self.lineEdit2.setFixedWidth(180)
-        self.lineEdit2.setMaxLength(16)
+        self.lineEdit2.setMaxLength(10)
 
         # 设置验证
         reg = QRegExp("PB[0~9]{8}")
@@ -68,7 +68,7 @@ class SignInWidget(QWidget):
 
         self.label = QLabel("Online Public Access Catalogue")
         fontlabel = QFont()
-        fontlabel.setPixelSize(30)
+        fontlabel.setPixelSize(27)
         self.label.setFixedWidth(390)
         # self.label.setFixedHeight(80)
         self.label.setFont(fontlabel)
@@ -76,7 +76,7 @@ class SignInWidget(QWidget):
         self.widget1 = QWidget()
         self.widget1.setLayout(self.Hlayout1)
         self.widget2 = QWidget()
-        self.widget2.setFixedWidth(300)
+        self.widget2.setFixedWidth(500)
         self.widget2.setFixedHeight(150)
         self.widget2.setLayout(self.formlayout)
         self.Hlayout2.addWidget(self.widget2, Qt.AlignCenter)
@@ -93,7 +93,7 @@ class SignInWidget(QWidget):
         studentId = self.lineEdit1.text()
         password = self.lineEdit2.text()
         if (studentId == "" or password == ""):
-            print(QMessageBox.warning(self, "No blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Alert!", "No blank is allowed", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 打开数据库连接
         db = QSqlDatabase.addDatabase("QSQLITE")

@@ -54,16 +54,16 @@ class BookStorageViewer(QWidget):
         self.Hlayout1.addWidget(self.condisionComboBox)
 
         # Hlayout2初始化
-        self.jumpToLabel = QLabel("Jump to ")
+        self.jumpToLabel = QLabel("go to")
         self.pageEdit = QLineEdit()
-        self.pageEdit.setFixedWidth(80)
-        s = "/" + str(self.totalPage) + "page"
+        self.pageEdit.setFixedWidth(60)
+        s = "/" + " " + str(self.totalPage) + "page"
         self.pageLabel = QLabel(s)
-        self.jumpToButton = QPushButton("Jumpu to")
-        self.prevButton = QPushButton("Privious")
-        self.prevButton.setFixedWidth(80)
+        self.jumpToButton = QPushButton("go")
+        self.prevButton = QPushButton("Pri")
+        self.prevButton.setFixedWidth(45)
         self.backButton = QPushButton("Next")
-        self.backButton.setFixedWidth(80)
+        self.backButton.setFixedWidth(45)
 
         Hlayout = QHBoxLayout()
         Hlayout.addWidget(self.jumpToLabel)
@@ -138,13 +138,13 @@ class BookStorageViewer(QWidget):
     def recordQuery(self, index):
         queryCondition = ""
         conditionChoice = self.condisionComboBox.currentText()
-        if (conditionChoice == "按书名查询"):
+        if (conditionChoice == "by Name"):
             conditionChoice = 'BookName'
-        elif (conditionChoice == "按书号查询"):
+        elif (conditionChoice == "by ID"):
             conditionChoice = 'BookId'
-        elif (conditionChoice == "按作者查询"):
+        elif (conditionChoice == "by Author"):
             conditionChoice = 'Auth'
-        elif (conditionChoice == '按分类查询'):
+        elif (conditionChoice == 'by Category'):
             conditionChoice = 'Category'
         else:
             conditionChoice = 'Publisher'
@@ -154,7 +154,7 @@ class BookStorageViewer(QWidget):
             self.queryModel.setQuery(queryCondition)
             self.totalRecord = self.queryModel.rowCount()
             self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-            label = "/" + str(int(self.totalPage)) + "页"
+            label = "/" + str(int(self.totalPage))
             self.pageLabel.setText(label)
             queryCondition = ("select * from Book ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
             self.queryModel.setQuery(queryCondition)
@@ -172,19 +172,19 @@ class BookStorageViewer(QWidget):
         self.totalRecord = self.queryModel.rowCount()
         # 当查询无记录时的操作
         if(self.totalRecord==0):
-            print(QMessageBox.information(self,"提醒","查询无记录",QMessageBox.Yes,QMessageBox.Yes))
+            print(QMessageBox.information(self,"Alert","No Record",QMessageBox.Yes,QMessageBox.Yes))
             queryCondition = "select * from Book"
             self.queryModel.setQuery(queryCondition)
             self.totalRecord = self.queryModel.rowCount()
             self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-            label = "/" + str(int(self.totalPage)) + "页"
+            label = "/" + str(int(self.totalPage))
             self.pageLabel.setText(label)
             queryCondition = ("select * from Book ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
             self.queryModel.setQuery(queryCondition)
             self.setButtonStatus()
             return
         self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-        label = "/" + str(int(self.totalPage)) + "页"
+        label = "/" + str(int(self.totalPage))
         self.pageLabel.setText(label)
         queryCondition = ("SELECT * FROM Book WHERE %s LIKE '%s' ORDER BY %s LIMIT %d,%d " % (
             conditionChoice, s, conditionChoice,index, self.pageRecord))
@@ -197,7 +197,7 @@ class BookStorageViewer(QWidget):
         self.currentPage = 1
         self.pageEdit.setText(str(self.currentPage))
         self.getPageCount()
-        s = "/" + str(int(self.totalPage)) + "页"
+        s = "/" + str(int(self.totalPage))
         self.pageLabel.setText(s)
         index = (self.currentPage - 1) * self.pageRecord
         self.recordQuery(index)

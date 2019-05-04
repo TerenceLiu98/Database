@@ -15,30 +15,30 @@ class borrowBookDialog(QDialog):
         self.studentId = StudentId
         self.setUpUI()
         self.setWindowModality(Qt.WindowModal)
-        self.setWindowTitle("借阅书籍")
+        self.setWindowTitle("Borrow Books")
 
     def setUpUI(self):
         # 书名，书号，作者，分类，添加数量.出版社,出版日期
         # 书籍分类：哲学类、社会科学类、政治类、法律类、军事类、经济类、文化类、教育类、体育类、语言文字类、艺术类、历史类、地理类、天文学类、生物学类、医学卫生类、农业类
-        BookCategory = ["哲学", "社会科学", "政治", "法律", "军事", "经济", "文化", "教育", "体育", "语言文字", "艺术", "历史"
-            , "地理", "天文学", "生物学", "医学卫生", "农业"]
+        BookCategory = ["Philosophy", "Social Science", "Politics", "Legislation", "Military", "Economics", "Culture", "Education",
+"Linguistics", "Art", "History", "geography", "Astronomy"]
         self.resize(300, 400)
         self.layout = QFormLayout()
         self.setLayout(self.layout)
 
         # Label控件
-        self.borrowStudentLabel = QLabel("借 阅 人:")
+        self.titlelabel = QLabel("Return Book")
+        self.borrowStudentLabel = QLabel("User:")
         self.borrowStudentIdLabel = QLabel(self.studentId)
-        self.titlelabel = QLabel("  借阅书籍")
-        self.bookNameLabel = QLabel("书    名:")
-        self.bookIdLabel = QLabel("书    号:")
-        self.authNameLabel = QLabel("作    者:")
-        self.categoryLabel = QLabel("分    类:")
-        self.publisherLabel = QLabel("出 版 社:")
-        self.publishDateLabel = QLabel("出版日期:")
+        self.bookNameLabel = QLabel("Book's Name:")
+        self.bookIdLabel = QLabel("Book ID:")
+        self.authNameLabel = QLabel("Author:")
+        self.categoryLabel = QLabel("Category:")
+        self.publisherLabel = QLabel("Press:")
+        self.publishDateLabel = QLabel("Date:")
 
         # button控件
-        self.borrowBookButton = QPushButton("确认借阅")
+        self.borrowBookButton = QPushButton("Confirm")
 
         # lineEdit控件
         self.bookNameEdit = QLineEdit()
@@ -102,6 +102,7 @@ class borrowBookDialog(QDialog):
         self.borrowBookButton.setFixedWidth(140)
 
         # 设置间距
+
         self.titlelabel.setMargin(8)
         self.layout.setVerticalSpacing(10)
         self.borrowBookButton.clicked.connect(self.borrowButtonClicked)
@@ -114,7 +115,7 @@ class borrowBookDialog(QDialog):
         BookId = self.bookIdEdit.text()
         # BookId为空的处理
         if (BookId == ""):
-            print(QMessageBox.warning(self, "警告", "你所要借的书不存在，请查看输入", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Alert", "The Book is not exist", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 打开数据库
         db = db = QSqlDatabase.addDatabase("QSQLITE")
@@ -125,7 +126,7 @@ class borrowBookDialog(QDialog):
         sql = "SELECT * FROM Book WHERE BookId='%s'" % BookId
         query.exec_(sql)
         if (not query.next()):
-            print(QMessageBox.warning(self, "警告", "你所要借的书不存在，请查看输入", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Alert", "The Book is not exist", QMessageBox.Yes, QMessageBox.Yes))
             return
 
         # 借书上限5本
@@ -135,14 +136,14 @@ class borrowBookDialog(QDialog):
         if (query.next()):
             borrowNum = query.value(0)
             if (borrowNum == 5):
-                QMessageBox.warning(self, "警告", "您借阅的书达到上限（5本）,借书失败！", QMessageBox.Yes, QMessageBox.Yes)
+                QMessageBox.warning(self, "Alert", "Your Loans is over the limitation", QMessageBox.Yes, QMessageBox.Yes)
                 return
         # 不允许重复借书
         sql = "SELECT COUNT(StudentId) FROM User_Book WHERE  StudentId='%s' AND BookId='%s' AND BorrowState=1" % (
         self.studentId, BookId)
         query.exec_(sql)
         if (query.next() and query.value(0)):
-            QMessageBox.warning(self, "警告", "您已经借阅了本书并尚未归还，借阅失败！", QMessageBox.Yes, QMessageBox.Yes)
+            QMessageBox.warning(self, "Alert","You have borrowed this book already", QMessageBox.Yes, QMessageBox.Yes)
             return
         # 更新User表
         sql = "UPDATE User SET TimesBorrowed=TimesBorrowed+1,NumBorrowed=NumBorrowed+1 WHERE StudentId='%s'" % self.studentId
@@ -158,7 +159,7 @@ class borrowBookDialog(QDialog):
         print(sql)
         query.exec_(sql)
         db.commit()
-        print(QMessageBox.information(self, "提示", "借阅成功!", QMessageBox.Yes, QMessageBox.Yes))
+        print(QMessageBox.information(self, "Yes", "Success!", QMessageBox.Yes, QMessageBox.Yes))
         self.borrow_book_success_signal.emit()
         self.close()
         return

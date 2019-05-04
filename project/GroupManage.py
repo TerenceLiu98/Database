@@ -7,15 +7,15 @@ from PyQt5.QtSql import *
 import time
 import sip
 
-class UserManage(QDialog):
+class GroupManage(QDialog):
     def __init__(self,parent=None):
-        super(UserManage, self).__init__(parent)
-        self.resize(280, 400)
+        super(GroupManage, self).__init__(parent)
+        self.resize(400, 400)
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        self.setWindowTitle("User Management")
+        self.setWindowTitle("Group Management")
         # 用户数
-        self.userCount = 0
+        self.GroupCount = 0
         self.oldDeleteId = ""
         self.oldDeleteName = ""
         self.deleteId = ""
@@ -31,9 +31,9 @@ class UserManage(QDialog):
 
         # 表格设置
         self.tableWidget = QTableWidget()
-        self.tableWidget.setRowCount(self.userCount)
-        self.tableWidget.setColumnCount(2)
-        self.tableWidget.setHorizontalHeaderLabels(['Student ID', 'Name'])
+        self.tableWidget.setRowCount(self.GroupCount)
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setHorizontalHeaderLabels(['Group Name', 'Group Id',"GroupSize"])
         # 不可编辑
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # 标题可拉伸
@@ -43,47 +43,52 @@ class UserManage(QDialog):
 
         self.layout.addWidget(self.tableWidget)
         self.setRows()
-        self.deleteUserButton = QPushButton("Remove User")
+        self.deleteGroupButton = QPushButton("Remove Group")
         hlayout = QHBoxLayout()
-        hlayout.addWidget(self.deleteUserButton, Qt.AlignHCenter)
+        hlayout.addWidget(self.deleteGroupButton, Qt.AlignHCenter)
         self.widget = QWidget()
         self.widget.setLayout(hlayout)
         self.widget.setFixedHeight(48)
         font = QFont()
         font.setPixelSize(15)
-        self.deleteUserButton.setFixedHeight(36)
-        self.deleteUserButton.setFixedWidth(180)
-        self.deleteUserButton.setFont(font)
+        self.deleteGroupButton.setFixedHeight(36)
+        self.deleteGroupButton.setFixedWidth(180)
+        self.deleteGroupButton.setFont(font)
         self.layout.addWidget(self.widget, Qt.AlignCenter)
         # 设置信号
-        self.deleteUserButton.clicked.connect(self.deleteUser)
-        self.tableWidget.itemClicked.connect(self.getStudentInfo)
+        self.deleteGroupButton.clicked.connect(self.deleteGroup)
+        self.tableWidget.itemClicked.connect(self.getGroupInfo)
 
     def getResult(self):
-        sql = "SELECT StudentId,Name FROM User WHERE IsAdmin=0"
+        sql = "SELECT GroupName, GroupId, GroupSize FROM InterestGroup"
         self.query.exec_(sql)
-        self.userCount = 0;
+        self.GroupCount = 0;
         while (self.query.next()):
-            self.userCount += 1;
-        sql = "SELECT StudentId,Name FROM User WHERE IsAdmin=0"
+            self.GroupCount += 1;
+        sql = "SELECT GroupName, GroupId, GroupSize FROM InterestGroup"
         self.query.exec_(sql)
 
     def setRows(self):
         font = QFont()
         font.setPixelSize(14)
-        for i in range(self.userCount):
+        for i in range(self.GroupCount):
             if (self.query.next()):
-                StudentIdItem = QTableWidgetItem(self.query.value(0))
-                StudentNameItem = QTableWidgetItem(self.query.value(1))
-                StudentIdItem.setFont(font)
-                StudentNameItem.setFont(font)
-                StudentIdItem.setTextAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-                StudentNameItem.setTextAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-                self.tableWidget.setItem(i, 0, StudentIdItem)
-                self.tableWidget.setItem(i, 1, StudentNameItem)
+                GroupNameItem = QTableWidgetItem(self.query.value(0))
+                GroupIdItem = QTableWidgetItem(self.query.value(1))
+                GroupSizeItem = QTableWidgetItem(self.query.value(2))
+                GroupIdItem.setFont(font)
+                GroupNameItem.setFont(font)
+                GroupSizeItem.setFont(font)
+                GroupIdItem.setTextAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+                GroupNameItem.setTextAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+                GroupSizeItem.setTextAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+                self.tableWidget.setItem(i, 0, GroupNameItem)
+                self.tableWidget.setItem(i, 1, GroupIdItem)
+                self.tableWidget.setItem(i, 2, GroupSizeItem)
+
         return
 
-    def getStudentInfo(self, item):
+    def getGroupInfo(self, item):
         row = self.tableWidget.currentIndex().row()
         self.tableWidget.verticalScrollBar().setSliderPosition(row)
         self.getResult()
@@ -95,35 +100,22 @@ class UserManage(QDialog):
         self.deleteId = self.query.value(0)
         self.deleteName = self.query.value(1)
 
-    def deleteUser(self):
+    def deleteGroup(self):
         if (self.deleteId == "" and self.deleteName == ""):
-            print(QMessageBox.warning(self,"ALERT!", "Choose the user you want to remove", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "ALERT!","Choose the Group you want to remove", QMessageBox.Yes, QMessageBox.Yes))
             return
         elif (self.deleteId == self.oldDeleteId and self.deleteName == self.oldDeleteName):
-            print(QMessageBox.warning(self,"ALERT!", "Choose the user you want to remove", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "ALERT!","Choose the Group you want to remove", QMessageBox.Yes, QMessageBox.Yes))
             return
-        if (QMessageBox.information(self, "ALERT!", "Rmoving:%s,%s\n User's operation can not be undo, continue?" % (self.deleteId, self.deleteName),
+        if (QMessageBox.information(self, "ALERT!", "Rmoving:%s,%s\n Group's operation can not be undo, continue?" % (self.deleteId, self.deleteName),
                                     QMessageBox.Yes | QMessageBox.No,
                                     QMessageBox.No) == QMessageBox.No):
             return
-        # 从User表删除用户
-        sql = "DELETE FROM User WHERE StudentId='%s'" % (self.deleteId)
+        # 从 User_Group表删除用户
+        sql = "DELETE FROM InterestGroup WHERE GroupId='%s'" % (self.deleteName)
         self.query.exec_(sql)
         self.db.commit()
-        # 归还所有书籍
-        sql = "SELECT * FROM User_Book  WHERE StudentId='%s' AND BorrowState=1" % self.deleteId
-        self.query.exec_(sql)
-        timenow = time.strftime('%Y-%m-%d', time.localtime(time.time()))
-        updateQuery=QSqlQuery()
-        while (self.query.next()):
-            bookId=self.query.value(1)
-            sql="UPDATE Book SET NumCanBorrow=NumCanBorrow+1 WHERE BookId='%s'"% bookId
-            updateQuery.exec_(sql)
-            self.db.commit()
-        sql="UPDATE User_Book SET ReturnTime='%s',BorrowState=0 WHERE StudentId='%s' AND BorrowState=1"%(timenow,self.deleteId)
-        self.query.exec_(sql)
-        self.db.commit()
-        print(QMessageBox.information(self,"Success",QMessageBox.Yes,QMessageBox.Yes))
+        print(QMessageBox.information(self,"Yes","Success",QMessageBox.Yes,QMessageBox.Yes))
         self.updateUI()
         return
 
@@ -135,9 +127,9 @@ class UserManage(QDialog):
         sip.delete(self.tableWidget)
         # 表格设置
         self.tableWidget = QTableWidget()
-        self.tableWidget.setRowCount(self.userCount)
-        self.tableWidget.setColumnCount(2)
-        self.tableWidget.setHorizontalHeaderLabels(['Student ID', 'Name'])
+        self.tableWidget.setRowCount(self.GroupCount)
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setHorizontalHeaderLabels(['Group Name', 'Group ID', 'Group Size'])
         # 不可编辑
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
         # 标题可拉伸
@@ -147,26 +139,26 @@ class UserManage(QDialog):
 
         self.layout.addWidget(self.tableWidget)
         self.setRows()
-        self.deleteUserButton = QPushButton("Remove User")
+        self.deleteGroupButton = QPushButton("Remove Group")
         hlayout = QHBoxLayout()
-        hlayout.addWidget(self.deleteUserButton, Qt.AlignHCenter)
+        hlayout.addWidget(self.deleteGroupButton, Qt.AlignHCenter)
         self.widget = QWidget()
         self.widget.setLayout(hlayout)
         self.widget.setFixedHeight(48)
         font = QFont()
         font.setPixelSize(15)
-        self.deleteUserButton.setFixedHeight(36)
-        self.deleteUserButton.setFixedWidth(180)
-        self.deleteUserButton.setFont(font)
+        self.deleteGroupButton.setFixedHeight(36)
+        self.deleteGroupButton.setFixedWidth(180)
+        self.deleteGroupButton.setFont(font)
         self.layout.addWidget(self.widget, Qt.AlignCenter)
         # 设置信号
-        self.deleteUserButton.clicked.connect(self.deleteUser)
-        self.tableWidget.itemClicked.connect(self.getStudentInfo)
+        self.deleteGroupButton.clicked.connect(self.deleteGroup)
+        self.tableWidget.itemClicked.connect(self.getGroupInfo)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
-    mainMindow = UserManage()
+    mainMindow = GroupManage()
     mainMindow.show()
     sys.exit(app.exec_())
