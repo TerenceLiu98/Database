@@ -14,7 +14,7 @@ class UserManage(QDialog):
         self.resize(700, 400)#窗体大小
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
-        self.setWindowTitle("管理用户")
+        self.setWindowTitle("User Management")
         # 用户数
         self.userCount = 0
         self.oldDeleteId = ""
@@ -36,7 +36,7 @@ class UserManage(QDialog):
         self.tableWidget = QTableWidget()
         self.tableWidget.setRowCount(self.userCount)
         self.tableWidget.setColumnCount(5)#table列数
-        self.tableWidget.setHorizontalHeaderLabels(['账号', '姓名','性别','科室','借阅书籍本数'])
+        self.tableWidget.setHorizontalHeaderLabels(['Account', 'Name','Gender','Programm','Loans'])
 
         # 不可编辑
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -48,9 +48,9 @@ class UserManage(QDialog):
         self.layout.addWidget(self.tableWidget)
         self.setRows()#在table里面放数据
 
-        self.addUserButton = QPushButton("添 加 用 户")
+        self.addUserButton = QPushButton("Add Users")
         # self.reviseUserButton = QPushButton("修 改 用 户")
-        self.deleteUserButton = QPushButton("删 除 用 户")
+        self.deleteUserButton = QPushButton("Delete Users")
 
         hlayout = QHBoxLayout()
         hlayout.addWidget(self.addUserButton, Qt.AlignHCenter)
@@ -136,12 +136,12 @@ class UserManage(QDialog):
 
     def deleteUser(self):
         if (self.deleteId == "" and self.deleteName == ""):
-            print(QMessageBox.warning(self, "警告", "请选中要删除的用户", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Click the User you want to remove", QMessageBox.Yes, QMessageBox.Yes))
             return
         elif (self.deleteId == self.oldDeleteId and self.deleteName == self.oldDeleteName):
-            print(QMessageBox.warning(self, "警告", "请选中要删除的用户", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Click the User you want to remove", QMessageBox.Yes, QMessageBox.Yes))
             return
-        if (QMessageBox.information(self, "提醒", "删除用户:%s,%s\n用户一经删除将无法恢复，是否继续?" % (self.deleteId, self.deleteName),
+        if (QMessageBox.information(self, "Warning", "Remove User:%s,%s\n can not be restore ofter removing" % (self.deleteId, self.deleteName),
                                     QMessageBox.Yes | QMessageBox.No,
                                     QMessageBox.No) == QMessageBox.No):
             return
@@ -201,7 +201,7 @@ class UserManage(QDialog):
         self.tableWidget = QTableWidget()
         self.tableWidget.setRowCount(self.userCount)
         self.tableWidget.setColumnCount(5)
-        self.tableWidget.setHorizontalHeaderLabels(['账号', '姓名', '性别', '科室','借阅书籍本数'])
+        self.tableWidget.setHorizontalHeaderLabels(['Account', 'Name','Gender','Programm','Loans'])
 
         # 不可编辑
         self.tableWidget.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -213,9 +213,9 @@ class UserManage(QDialog):
         self.layout.addWidget(self.tableWidget)
         self.setRows()
 
-        self.addUserButton = QPushButton("添 加 用 户")
+        self.addUserButton = QPushButton("Add User")
         # self.reviseUserButton = QPushButton("修 改 用 户")
-        self.deleteUserButton = QPushButton("删 除 用 户")
+        self.deleteUserButton = QPushButton("Delete User")
 
         hlayout = QHBoxLayout()
         hlayout.addWidget(self.addUserButton, Qt.AlignHCenter)
@@ -246,7 +246,7 @@ class UserManage(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
+    app.setWindowIcon(QIcon("./images/library.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = UserManage()
     mainMindow.show()

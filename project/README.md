@@ -1,15 +1,35 @@
 # 小型图书馆管理系统-library management system
 
-## 使用python3，PyQt5，Sqlite3搭建
+## Technology stack
+1. python3
+2. PyQt5
+3. Sqlite3
 
 > 实现以下功能:
-- 查询图书信息、库存位置
-- 采购增加和淘汰书籍 
-- 借书、还书功能
-- 用户的增加、删除、借书情况查询
+- Store book information, purchase and elimination, and rental status
+- Achieve book purchasing, elimination, and lending functions.
+- Actualise book information, procurement and elimination, inventory, and rental inquiry
+- Actualise the statistics of purchasing, inventory, elimination, and rental of books
 
-## 适用
-该系统开发适用于小型单位图书馆，这样的单位书籍不多，不需要考虑对网络部署以及用户功能，所以流程就简化成只需要记录谁借了什么书就行。现在该系统已服务于国内某医院图书馆。
+- [ ] readers recommandation
+- [ ] book I like
+- [ ] book I collection
 
-## 使用方法
-在AdminHome.py打开运行即可，一个窗口里面可以实现上述所有功能。
+## General idea
+
+As a management system, it is natural to implement both administrator and student content.
+
+First need to log in and register the page
+For the administrator, on the administrator's management page, the purchase, elimination, inventory, rental situation query and statistics of the book will be realized.
+For students, it is necessary to realize the borrowing, returning, and renting of books.
+
+## Usage
+
+Install all the require packages
+```python3
+pip3 install -r requirement.txt
+```
+run the admin GUI:
+```python3
+python3 AdminHome.py
+```

@@ -19,25 +19,25 @@ class returnBookDialog(QDialog):
     def setUpUI(self):
         # 书名，书号，作者，分类，添加数量.出版社,出版日期
         # 书籍分类：哲学类、社会科学类、政治类、法律类、军事类、经济类、文化类、教育类、体育类、语言文字类、艺术类、历史类、地理类、天文学类、生物学类、医学卫生类、农业类
-        BookCategory = ["哲学", "社会科学", "政治", "法律", "军事", "经济", "文化", "教育", "体育", "语言文字", "艺术", "历史"
-            , "地理", "天文学", "生物学", "医学卫生", "农业"]
+        BookCategory = ["Philosophy", "Social Science", "Politics", "legislation", "Military", "Economics", "Culture", "Education",
+        "Linguistics", "Art", "History", "geography", "Astronomy"]
         self.resize(300, 400)
         self.layout = QFormLayout()
         self.setLayout(self.layout)
 
         # Label控件
-        self.returnStudentLabel = QLabel("还 书 人:")
+        self.returnStudentLabel = QLabel("Loanholder:")
         # self.returnStudentIdLabel = QLabel(self.studentId)
-        self.titlelabel = QLabel("  归还书籍")
-        self.bookNameLabel = QLabel("书    名:")
-        self.bookIdLabel = QLabel("书    号:")
-        self.authNameLabel = QLabel("作    者:")
-        self.categoryLabel = QLabel("分    类:")
-        self.publisherLabel = QLabel("出 版 社:")
-        self.publishDateLabel = QLabel("出版日期:")
+        self.titlelabel = QLabel("Return Book")
+        self.bookNameLabel = QLabel("Name:")
+        self.bookIdLabel = QLabel("ID:")
+        self.authNameLabel = QLabel("Author:")
+        self.categoryLabel = QLabel("Catogery:")
+        self.publisherLabel = QLabel("Press:")
+        self.publishDateLabel = QLabel("Date:")
 
         # button控件
-        self.returnBookButton = QPushButton("确认归还")
+        self.returnBookButton = QPushButton("Confirm")
 
         # lineEdit控件
         self.returnStudentNameEdit=QLineEdit()#还书人名字
@@ -118,7 +118,7 @@ class returnBookDialog(QDialog):
         # studentID=self.studentID
         # BookId为空的处理
         if (BookId == ""):
-            print(QMessageBox.warning(self, "警告", "你所要还的书不存在，请查看输入", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "This book is not exist", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 打开数据库
         db = db = QSqlDatabase.addDatabase("QSQLITE")
@@ -130,7 +130,7 @@ class returnBookDialog(QDialog):
         sql = "SELECT * FROM User_Book WHERE StudentId='%s' AND BookId='%s' AND BorrowState=1" %(self.studentId,BookId)
         query.exec_(sql)
         if (not query.next()):
-            print(QMessageBox.information(self, "提示", "此书并未借阅，故无需归还", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.information(self, "No Loan record", QMessageBox.Yes, QMessageBox.Yes))
             return
         # 更新User表
         sql = "UPDATE User SET NumBorrowed=NumBorrowed-1 WHERE StudentId='%s'" % self.studentId
@@ -149,7 +149,7 @@ class returnBookDialog(QDialog):
         sql = "UPDATE User_Book SET ReturnTime='%s',BorrowState=0 WHERE StudentId='%s' AND BookId='%s' AND BorrowState=1" % (timenow,self.studentId,BookId)
         query.exec_(sql)
         db.commit()
-        print(QMessageBox.information(self, "提示", "归还成功!", QMessageBox.Yes, QMessageBox.Yes))
+        print(QMessageBox.information(self, "Return Seccuess", QMessageBox.Yes, QMessageBox.Yes))
         self.return_book_success_signal.emit()
         self.close()
         return
@@ -192,7 +192,7 @@ class returnBookDialog(QDialog):
 #IS1027
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
+    app.setWindowIcon(QIcon("./images/library.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = returnBookDialog()#"PB15000135"
     mainMindow.show()

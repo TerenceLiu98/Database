@@ -14,25 +14,25 @@ class dropBookDialog(QDialog):
         super(dropBookDialog, self).__init__(parent)
         self.setUpUI()
         self.setWindowModality(Qt.WindowModal)
-        self.setWindowTitle("删除书籍")
+        self.setWindowTitle("Remove Books")
 
     def setUpUI(self):
         # 书名，书号，作者，分类，添加数量.出版社,出版日期
         # 书籍分类：哲学类、社会科学类、政治类、法律类、军事类、经济类、文化类、教育类、体育类、语言文字类、艺术类、历史类、地理类、天文学类、生物学类、医学卫生类、农业类
-        BookCategory = ["哲学", "社会科学", "政治", "法律", "军事", "经济", "文化", "教育", "体育", "语言文字", "艺术", "历史"
-            , "地理", "天文学", "生物学", "医学卫生", "农业"]
+        BookCategory = ["Philosophy", "Social Science", "Politics", "legislation", "Military", "Economics", "Culture", "Education",
+        "Linguistics", "Art", "History", "geography", "Astronomy"]
         self.resize(300, 400)
         self.layout = QFormLayout()
         self.setLayout(self.layout)
 
         # Label控件
-        self.titlelabel = QLabel("  淘汰书籍")
-        self.bookNameLabel = QLabel("书    名:")
-        self.bookIdLabel = QLabel("书    号:")
-        self.authNameLabel = QLabel("作    者:")
-        self.categoryLabel = QLabel("分    类:")
-        self.publisherLabel = QLabel("出 版 社:")
-        self.publishDateLabel = QLabel("出版日期:")
+        self.titlelabel = QLabel("Remove Book")
+        self.bookNameLabel = QLabel("Name:")
+        self.bookIdLabel = QLabel("ID:")
+        self.authNameLabel = QLabel("Author:")
+        self.categoryLabel = QLabel("Catogery:")
+        self.publisherLabel = QLabel("Press:")
+        self.publishDateLabel = QLabel("Date:")
         # self.dropNumLabel = QLabel("数    量:")
 
         # button控件
@@ -160,13 +160,13 @@ class dropBookDialog(QDialog):
             sql = "INSERT INTO buyordrop VALUES ('%s','%s',0)" % (bookId, timenow)
             query.exec_(sql)
             db.commit()
-            print(QMessageBox.information(self, "提示", "淘汰书籍成功!", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.information(self, "Reove Seccuess", QMessageBox.Yes, QMessageBox.Yes))
             self.drop_book_successful_signal.emit()
             # self.close()
             self.clearEdit()
             return
         else:
-            print(QMessageBox.warning(self, "警告", "没有该书号可以淘汰，请检查输入", QMessageBox.Yes,
+            print(QMessageBox.warning(self, "No this book", QMessageBox.Yes,
                                       QMessageBox.Yes))
             return
     def clearEdit(self):
@@ -180,7 +180,7 @@ class dropBookDialog(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
+    app.setWindowIcon(QIcon("./images/library.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = dropBookDialog()
     mainMindow.show()

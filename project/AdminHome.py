@@ -58,7 +58,7 @@ class AdminHome(QWidget):
 
         self.layout.addLayout(self.buttonlayout)
         self.storageView = BookStorageViewer()
-        self.layout.addWidget(self.storageView)
+#        self.layout.addWidget(self.storageView)
 
         self.addBookButton.clicked.connect(self.addBookButtonClicked)
         self.dropBookButton.clicked.connect(self.dropBookButtonClicked)

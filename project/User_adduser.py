@@ -25,15 +25,15 @@ class addUserDialog(QDialog):
         self.setLayout(self.layout)
 
         # Label控件
-        self.titlelabel = QLabel("  添加借阅人")
-        self.studentIdLabel = QLabel("借 阅 人ID:")
-        self.nameLabel=QLabel("姓    名:")
-        self.sexLabel = QLabel("性    别:")
-        self.keshiLabel = QLabel("科    室:")
+        self.titlelabel = QLabel("Add User")
+        self.studentIdLabel = QLabel("User ID:")
+        self.nameLabel=QLabel("Name:")
+        self.sexLabel = QLabel("Gender:")
+        self.keshiLabel = QLabel("Programme:")
 
 
         # button控件
-        self.addUserButton = QPushButton("添 加")
+        self.addUserButton = QPushButton("Add")
 
         # lineEdit控件
         self.studentIDEdit = QLineEdit()

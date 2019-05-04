@@ -137,7 +137,7 @@ class borrowBookDialog(QDialog):
         self.studentId=self.borrowStudentEdit.text()
         # BookId为空的处理
         if (BookId == ""):
-            print(QMessageBox.warning(self, "警告", "你所要借的书不存在，请查看输入", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Warning", "This book does not esist", QMessageBox.Yes, QMessageBox.Yes))
             return
 
         # 打开数据库
@@ -149,7 +149,7 @@ class borrowBookDialog(QDialog):
         sql = "SELECT * FROM Book WHERE BookId='%s'" % BookId
         query.exec_(sql)
         if (not query.next()):
-            print(QMessageBox.warning(self, "警告", "你所要借的书不存在，请查看输入", QMessageBox.Yes, QMessageBox.Yes))
+            print(QMessageBox.warning(self, "Warning!", "The book does not esist", QMessageBox.Yes, QMessageBox.Yes))
             return
 
         # 借书上限5本
@@ -159,7 +159,7 @@ class borrowBookDialog(QDialog):
         if (query.next()):
             borrowNum = query.value(0)
             if (borrowNum == 5):
-                QMessageBox.warning(self, "警告", "您借阅的书达到上限（5本）,借书失败！", QMessageBox.Yes, QMessageBox.Yes)
+                QMessageBox.warning(self, "Warning!", "You have reach the limitation , failed!", QMessageBox.Yes, QMessageBox.Yes)
                 return
 
 
@@ -168,7 +168,7 @@ class borrowBookDialog(QDialog):
         BookId)
         query.exec_(sql)
         if (query.next() and query.value(0)):
-            QMessageBox.warning(self, "警告", "该书已经被借阅借阅失败！", QMessageBox.Yes, QMessageBox.Yes)
+            QMessageBox.warning(self, "Warning!", "This book has been Borrowed, failed.", QMessageBox.Yes, QMessageBox.Yes)
             return
 
 
@@ -190,7 +190,7 @@ class borrowBookDialog(QDialog):
         # print(sql)
         query.exec_(sql)
         db.commit()
-        print(QMessageBox.information(self, "提示", "借阅成功!", QMessageBox.Yes, QMessageBox.Yes))
+        print(QMessageBox.information(self,"Success!", QMessageBox.Yes, QMessageBox.Yes))
         self.borrow_book_success_signal.emit()
         self.close()
         return
@@ -237,7 +237,7 @@ class borrowBookDialog(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("./images/MainWindow_1.png"))
+    app.setWindowIcon(QIcon("./images/library.png"))
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     mainMindow = borrowBookDialog()
     mainMindow.show()

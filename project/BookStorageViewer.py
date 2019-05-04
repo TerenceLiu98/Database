@@ -37,7 +37,7 @@ class BookStorageViewer(QWidget):
 
         # Hlayout1控件的初始化
         self.searchEdit = QLineEdit()
-        self.searchEdit.setFixedHeight(32)
+        self.searchEdit.setFixedHeight(50)
         font = QFont()
         font.setPixelSize(15)
         self.searchEdit.setFont(font)
@@ -65,9 +65,9 @@ class BookStorageViewer(QWidget):
         self.pageLabel = QLabel(s)
         self.jumpToButton = QPushButton("Go!")
         self.prevButton = QPushButton("up")
-        self.prevButton.setFixedWidth(60)
+        self.prevButton.setFixedWidth(40)
         self.backButton = QPushButton("down")
-        self.backButton.setFixedWidth(60)
+        self.backButton.setFixedWidth(40)
 
         Hlayout = QHBoxLayout()
         Hlayout.addWidget(self.jumpToLabel)
@@ -84,11 +84,11 @@ class BookStorageViewer(QWidget):
         # tableView
         # id, bookName, bookId, ISSN, Auther, Classification, Press
         # Press_date, reserve, reminder
-        # 序号，书名，书号，作者，分类，出版社，出版时间，库存，剩余可借
         self.db = QSqlDatabase.addDatabase("QSQLITE")
         self.db.setDatabaseName('./db/LibraryManagement.db')
         self.db.open()
         self.tableView = QTableView()
+
         self.tableView.horizontalHeader().setStretchLastSection(True)
         self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.tableView.setEditTriggers(QAbstractItemView.NoEditTriggers)
@@ -104,12 +104,9 @@ class BookStorageViewer(QWidget):
         self.queryModel.setHeaderData(5, Qt.Horizontal, "Press")
         self.queryModel.setHeaderData(6, Qt.Horizontal, "Press_date")
         self.queryModel.setHeaderData(7, Qt.Horizontal, "Brorrowed")
-        self.queryModel.setHeaderData(8, Qt.Horizontal, "Place")
-
-        self.queryModel.setHeaderData(9, Qt.Horizontal, "Borrower's Name")#借书人名字
-        self.queryModel.setHeaderData(10, Qt.Horizontal, "Devision of Borrower")#借书人科室
-        self.queryModel.setHeaderData(11, Qt.Horizontal, "Time")#借书人科室
-
+        self.queryModel.setHeaderData(8, Qt.Horizontal, "Borrower's Name")#借书人名字
+        self.queryModel.setHeaderData(9, Qt.Horizontal, "programme of Borrower")#借书人科室
+        self.queryModel.setHeaderData(10, Qt.Horizontal, "Time")# 总借阅次数"
         self.layout.addLayout(self.Hlayout1)
         self.layout.addWidget(self.tableView)
 
@@ -134,7 +131,7 @@ class BookStorageViewer(QWidget):
 
     # 得到记录数
     def getTotalRecordCount(self):
-        self.queryModel.setQuery("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId")#("SELECT * FROM Book")
+        self.queryModel.setQuery("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId")#("SELECT * FROM Book")
         self.totalRecord = self.queryModel.rowCount()
         return
 
@@ -164,13 +161,13 @@ class BookStorageViewer(QWidget):
             conditionChoice = 'Publisher'
 
         if (self.searchEdit.text() == ""):
-            queryCondition = "select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId"#"select * from Book"
+            queryCondition = "select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId"#"select * from Book"
             self.queryModel.setQuery(queryCondition)
             self.totalRecord = self.queryModel.rowCount()
             self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-            label = "/" + str(int(self.totalPage)) + "页"
+            label = "/" + str(int(self.totalPage))
             self.pageLabel.setText(label)
-            queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
+            queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
             self.queryModel.setQuery(queryCondition)
             self.setButtonStatus()
             return
@@ -180,27 +177,27 @@ class BookStorageViewer(QWidget):
         s = '%'
         for i in range(0, len(temp)):
             s = s + temp[i] + "%"
-        queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId WHERE %s LIKE '%s' ORDER BY %s " % (
+        queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId WHERE %s LIKE '%s' ORDER BY %s " % (
             conditionChoice, s,conditionChoice))
         self.queryModel.setQuery(queryCondition)
         self.totalRecord = self.queryModel.rowCount()
         # 当查询无记录时的操作
         if(self.totalRecord==0):
-            print(QMessageBox.information(self,"提醒","查询无记录",QMessageBox.Yes,QMessageBox.Yes))
-            queryCondition = "select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId"
+            print(QMessageBox.information(self,"Attention!", "No record.",QMessageBox.Yes,QMessageBox.Yes))
+            queryCondition = "select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId"
             self.queryModel.setQuery(queryCondition)
             self.totalRecord = self.queryModel.rowCount()
             self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-            label = "/" + str(int(self.totalPage)) + "页"
+            label = "/" + str(int(self.totalPage)) + "pages"
             self.pageLabel.setText(label)
-            queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
+            queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId ORDER BY %s  limit %d,%d " % (conditionChoice,index, self.pageRecord))
             self.queryModel.setQuery(queryCondition)
             self.setButtonStatus()
             return
         self.totalPage = int((self.totalRecord + self.pageRecord - 1) / self.pageRecord)
-        label = "/" + str(int(self.totalPage)) + "页"
+        label = "/" + str(int(self.totalPage)) + "pages"
         self.pageLabel.setText(label)
-        queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId WHERE %s LIKE '%s' ORDER BY %s LIMIT %d,%d " % (
+        queryCondition = ("select Book.BookName, Book.BookId, Book.ISSN, Book.Auth,Book.Category,Book.Publisher,Book.PublishTime,Book.isBorrowed,Book.location,b.Name,b.keshi, b.BorrowTime from Book left join  (select User_Book.StudentId,User_Book.BookId,User_Book.BorrowTime,User.Name,User.keshi from User_Book left join User on User.StudentId=User_Book.StudentId where User_Book.ReturnTime is null) b on Book.BookId=b.BookId WHERE %s LIKE '%s' ORDER BY %s LIMIT %d,%d " % (
             conditionChoice, s, conditionChoice,index, self.pageRecord))
         self.queryModel.setQuery(queryCondition)
         self.setButtonStatus()
@@ -211,7 +208,7 @@ class BookStorageViewer(QWidget):
         self.currentPage = 1
         self.pageEdit.setText(str(self.currentPage))
         self.getPageCount()
-        s = "/" + str(int(self.totalPage)) + "页"
+        s = "/" + str(int(self.totalPage)) + "pages"
         self.pageLabel.setText(s)
         index = (self.currentPage - 1) * self.pageRecord
         self.recordQuery(index)
