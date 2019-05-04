@@ -58,7 +58,7 @@ pysmbc==1.0.15.8
 pytz==2019.1
 pyudev==0.21.0.dev20180716
 pywbem==0.12.6
-PyYAML==3.13
+PyYAML>=4.1
 QDarkStyle==2.6.5
 QScintilla==2.10.8
 reportlab==3.5.13
