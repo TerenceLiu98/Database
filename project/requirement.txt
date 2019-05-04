@@ -58,7 +58,7 @@ pysmbc==1.0.15.8
 pytz==2019.1
 pyudev==0.21.0.dev20180716
 pywbem==0.12.6
-PyYAML==3.13
+pyyaml>=4.1
 QScintilla==2.10.8
 reportlab==3.5.13
 service-identity==17.0.0

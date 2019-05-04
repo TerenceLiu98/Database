@@ -19,13 +19,13 @@ class AdminHome(QWidget):
         self.setUpUI()
 
     def setUpUI(self):
-        self.resize(1920, 1080) # interface size
+        self.resize(900, 600) # interface size
         self.setWindowTitle("Library Management System")
         self.layout = QHBoxLayout()
         self.buttonlayout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        font = QFont() # interface font 
+        font = QFont() # interface font
         font.setPixelSize(16)
         self.userManageButton = QPushButton("User Management")
         self.addBookButton = QPushButton("Add Collection")
