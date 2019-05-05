@@ -7,6 +7,7 @@ from addBookDialog import addBookDialog
 from dropBookDialog import dropBookDialog
 from BookStorageViewer import BookStorageViewer
 from UserManage import UserManage
+from GroupManage import GroupManage
 
 class AdminHome(QWidget):
     def __init__(self):
@@ -25,12 +26,15 @@ class AdminHome(QWidget):
         self.userManageButton = QPushButton("User Management")
         self.addBookButton = QPushButton("Add Books")
         self.dropBookButton = QPushButton("Remove Books")
-        self.InterestGroupbuttonButton = QPushButton("Groups")
+        self.GroupManageButton = QPushButton("Groups")
         self.userManageButton.setFont(font)
+        self.GroupManageButton.setFont(font)
         self.addBookButton.setFont(font)
         self.dropBookButton.setFont(font)
         self.userManageButton.setFixedWidth(200)
         self.userManageButton.setFixedHeight(42)
+        self.GroupManageButton.setFixedWidth(200)
+        self.GroupManageButton.setFixedHeight(42)
         self.addBookButton.setFixedWidth(200)
         self.addBookButton.setFixedHeight(42)
         self.dropBookButton.setFixedWidth(200)
@@ -38,6 +42,7 @@ class AdminHome(QWidget):
         self.buttonlayout.addWidget(self.addBookButton)
         self.buttonlayout.addWidget(self.dropBookButton)
         self.buttonlayout.addWidget(self.userManageButton)
+        self.buttonlayout.addWidget(self.GroupManageButton)
         self.layout.addLayout(self.buttonlayout)
         self.storageView = BookStorageViewer()
         self.layout.addWidget(self.storageView)
@@ -45,6 +50,7 @@ class AdminHome(QWidget):
         self.addBookButton.clicked.connect(self.addBookButtonClicked)
         self.dropBookButton.clicked.connect(self.dropBookButtonClicked)
         self.userManageButton.clicked.connect(self.userManage)
+        self.GroupManageButton.clicked.connect(self.GroupManage)
 
     def addBookButtonClicked(self):
         addDialog = addBookDialog(self)
@@ -62,6 +68,11 @@ class AdminHome(QWidget):
         UserDelete=UserManage(self)
         UserDelete.show()
         UserDelete.exec_()
+
+    def GroupManage(self):
+        GroupDelete=GroupManage(self)
+        GroupDelete.show()
+        GroupDelete.exec_()
 
 
 if __name__ == "__main__":

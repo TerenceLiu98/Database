@@ -10,7 +10,7 @@ import sip
 from AdminHome import AdminHome
 from StudentHome import StudentHome
 from changePasswordDialog import changePasswordDialog
-
+from AddGroup import AddGroupWidget
 
 class Main(QMainWindow):
     def __init__(self, parent=None):
@@ -23,16 +23,19 @@ class Main(QMainWindow):
         bar = self.menuBar()
         self.Menu = bar.addMenu("Menu")
         self.signUpAction = QAction("Sign Up", self)
+        self.GroupAction = QAction("Add Group", self)
         self.changePasswordAction =QAction("Change Password",self)
         self.signInAction = QAction("Sign In", self)
         self.quitSignInAction = QAction("Sign Out", self)
         self.quitAction = QAction("Exit", self)
         self.Menu.addAction(self.signUpAction)
+        self.Menu.addAction(self.GroupAction)
         self.Menu.addAction(self.changePasswordAction)
         self.Menu.addAction(self.signInAction)
         self.Menu.addAction(self.quitSignInAction)
         self.Menu.addAction(self.quitAction)
         self.signUpAction.setEnabled(True)
+        self.GroupAction.setEnabled(True)
         self.changePasswordAction.setEnabled(True)
         self.signInAction.setEnabled(False)
         self.quitSignInAction.setEnabled(False)
@@ -46,6 +49,7 @@ class Main(QMainWindow):
         self.setCentralWidget(self.widget)
         self.changePasswordAction.setEnabled(False)
         self.signUpAction.setEnabled(True)
+        self.GroupAction.setEnabled(True)
         self.signInAction.setEnabled(False)
         self.quitSignInAction.setEnabled(True)
 
@@ -55,6 +59,7 @@ class Main(QMainWindow):
         self.setCentralWidget(self.widget)
         self.changePasswordAction.setEnabled(False)
         self.signUpAction.setEnabled(True)
+        self.GroupAction.setEnabled(False)
         self.signInAction.setEnabled(False)
         self.quitSignInAction.setEnabled(True)
 
@@ -68,6 +73,15 @@ class Main(QMainWindow):
             self.widget = SignUpWidget()
             self.setCentralWidget(self.widget)
             self.widget.student_signup_signal[str].connect(self.studentSignIn)
+            self.signUpAction.setEnabled(False)
+            self.changePasswordAction.setEnabled(True)
+            self.signInAction.setEnabled(True)
+            self.quitSignInAction.setEnabled(False)
+        if (q.text() == "Add Group"):
+            sip.delete(self.widget)
+            self.widget = AddGroupWidget()
+            self.setCentralWidget(self.widget)
+            self.widget.Group_AddGroup_success_signal[str].connect(self.studentSignIn)
             self.signUpAction.setEnabled(False)
             self.changePasswordAction.setEnabled(True)
             self.signInAction.setEnabled(True)

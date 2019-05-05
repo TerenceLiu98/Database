@@ -8,7 +8,7 @@ import hashlib
 
 
 class AddGroupWidget(QDialog):
-    Group_AddGroup_success_signal = pyqtSignal()
+    Group_AddGroup_success_signal = pyqtSignal(str)
 
     def __init__(self):
         super().__init__()
@@ -108,9 +108,7 @@ class AddGroupWidget(QDialog):
             db.exec_(sql)
             db.commit()
             db.rollback()
-            sql = "SELECT * FROM InterestGroup ORDER BY GroupId ASC"
-            db.exec_(sql)
-            db.commit()
+
             print(QMessageBox.information(self, "Yes", "Add seccuessfully!", QMessageBox.Yes, QMessageBox.Yes))
             self.Group_AddGroup_success_signal.emit()
             db.close()

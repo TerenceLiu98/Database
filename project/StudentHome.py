@@ -27,34 +27,38 @@ class StudentHome(QWidget):
         self.borrowBookButton = QPushButton("Borrow")
         self.returnBookButton = QPushButton("Return")
         self.myBookStatus = QPushButton("My Loans")
-        self.InterestGroupButton = QPushButton("Groups")
+        self.allBookButton = QPushButton("Inventory")
         self.buttonLayout.addWidget(self.borrowBookButton)
         self.buttonLayout.addWidget(self.returnBookButton)
         self.buttonLayout.addWidget(self.myBookStatus)
+        self.buttonLayout.addWidget(self.allBookButton)
         self.borrowBookButton.setFixedWidth(100)
         self.borrowBookButton.setFixedHeight(42)
         self.returnBookButton.setFixedWidth(100)
         self.returnBookButton.setFixedHeight(42)
         self.myBookStatus.setFixedWidth(100)
         self.myBookStatus.setFixedHeight(42)
+        self.allBookButton.setFixedWidth(100)
+        self.allBookButton.setFixedHeight(42)
 
         font = QFont()
         font.setPixelSize(16)
         self.borrowBookButton.setFont(font)
         self.returnBookButton.setFont(font)
         self.myBookStatus.setFont(font)
+        self.allBookButton.setFont(font)
 
 
         self.storageView = BookStorageViewer()
         self.borrowStatusView=BorrowStatusViewer(self.StudentId)
-
+        self.allBookButton.setEnabled(True)
 
         self.layout.addLayout(self.buttonLayout)
         self.layout.addWidget(self.storageView)
-
         self.borrowBookButton.clicked.connect(self.borrowBookButtonClicked)
         self.returnBookButton.clicked.connect(self.returnBookButtonClicked)
         self.myBookStatus.clicked.connect(self.myBookStatusClicked)
+        self.allBookButton.clicked.connect(self.allBookButtonClicked)
 
 
     def borrowBookButtonClicked(self):
@@ -81,6 +85,17 @@ class StudentHome(QWidget):
         self.storageView = BookStorageViewer()
         self.borrowStatusView = BorrowStatusViewer(self.StudentId)
         self.layout.addWidget(self.borrowStatusView)
+        self.myBookStatus.setEnabled(False)
+        self.allBookButton.setEnabled(True)
+        return
+
+    def allBookButtonClicked(self):
+        self.layout.removeWidget(self.borrowStatusView)
+        sip.delete(self.borrowStatusView)
+        self.borrowStatusView = BorrowStatusViewer(self.StudentId)
+        self.storageView = BookStorageViewer()
+        self.layout.addWidget(self.storageView)
+        self.allBookButton.setEnabled(False)
         self.myBookStatus.setEnabled(True)
         return
 
