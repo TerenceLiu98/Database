@@ -27,13 +27,24 @@ First need to log in and register the page
 For the administrator, on the administrator's management page, the purchase, elimination, inventory, rental situation query and statistics of the book will be realized.
 For students, it is necessary to realize the borrowing, returning, and renting of books.
 
-## Usage
+## Usage (virtualenv + pip3)
 
-Install all the require packages
+1. install virtualenv 
+```shell
+pip3 install virtualenv
+```
+
+2. install dependencies 
+```shell
+pip3 install -r requirements.txt
+```
+3. Install all the require packages
+
+4. Run the Admin GUI
 ```python3
 pip3 install -r requirement.txt
 ```
-Run the admin GUI:
+5. Run the admin GUI:
 ```python3
 python3 AdminHome.py
 ```

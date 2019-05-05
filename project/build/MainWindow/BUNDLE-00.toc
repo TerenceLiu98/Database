@@ -1,0 +1,4 @@
+([('MainWindow',
+   '/Users/liujunjie/Nutstore_Files/Nutstore/Year Three Second '
+   'Semester/Database/project/dist/MainWindow',
+   'EXECUTABLE')],)
