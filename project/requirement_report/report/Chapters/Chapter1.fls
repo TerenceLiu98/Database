@@ -1,0 +1,10 @@
+PWD /Users/liujunjie/Nutstore_Files/Nutstore/Year Three Second Semester/Database/project/requirement_report/report/Chapters
+INPUT /usr/local/texlive/2018/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt
+INPUT Chapter1.tex
+OUTPUT Chapter1.log
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm

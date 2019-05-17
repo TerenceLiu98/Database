@@ -1,0 +1,86 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{montgomery2012introduction}{book}{}
+    \name{author}{3}{}{%
+      {{hash=MDC}{%
+         family={Montgomery},
+         familyi={M\bibinitperiod},
+         given={Douglas\bibnamedelima C},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=PEA}{%
+         family={Peck},
+         familyi={P\bibinitperiod},
+         given={Elizabeth\bibnamedelima A},
+         giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=VGG}{%
+         family={Vining},
+         familyi={V\bibinitperiod},
+         given={G\bibnamedelima Geoffrey},
+         giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {John Wiley \& Sons}%
+    }
+    \strng{namehash}{MDCPEAVGG1}
+    \strng{fullhash}{MDCPEAVGG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Introduction to linear regression analysis}
+    \field{volume}{821}
+    \field{year}{2012}
+  \endentry
+
+  \entry{yueh1997modeling}{article}{}
+    \name{author}{1}{}{%
+      {{hash=YSH}{%
+         family={Yueh},
+         familyi={Y\bibinitperiod},
+         given={Simon\bibnamedelima H},
+         giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{YSH1}
+    \strng{fullhash}{YSH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1997}
+    \field{labeldatesource}{year}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \field{number}{6}
+    \field{pages}{1400\bibrangedash 1418}
+    \field{title}{Modeling of wind direction signals in polarimetric sea
+  surface brightness temperatures}
+    \field{volume}{35}
+    \field{journaltitle}{IEEE Transactions on Geoscience and Remote Sensing}
+    \field{year}{1997}
+  \endentry
+\enddatalist
+\endinput

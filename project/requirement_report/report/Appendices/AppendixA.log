@@ -1,0 +1,1405 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.7.9)  13 DEC 2018 16:22
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**AppendixA.tex
+(./AppendixA.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+./AppendixA.tex:3: Undefined control sequence.
+l.3 \chapter
+            {R Code} % Main appendix title
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./AppendixA.tex:3: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \chapter{R
+               Code} % Main appendix title
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no R in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 3--4
+[]
+ []
+
+
+./AppendixA.tex:7: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 T
+     he color of links can be changed to your liking using:
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no T in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no : in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 7--8
+[]
+ []
+
+
+Overfull \hbox (309.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 library(VIM) # function aggr: visualize the missing value[] 
+ []
+
+
+Overfull \hbox (252.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(tidyverse) #To use ggplot2, tidyr, dplyr[] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(plotly) #To create interactive plots[] 
+ []
+
+
+Overfull \hbox (168.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(DT) #To display the data[] 
+ []
+
+
+Overfull \hbox (189.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(magrittr) #To pipe operators[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(ggplot2) #To make and customize quickly plots[] 
+ []
+
+
+Overfull \hbox (288.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(devtools) #To Make Developing R Packages Easier[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(lubridate) # date tranformation[] 
+ []
+
+
+Overfull \hbox (78.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(beginr)[] 
+ []
+
+
+Overfull \hbox (488.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 beijing.data <- read.csv("PRSA_data_2010.1.1-2014.12.31.csv", header = T) # load the data set[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 head(beijing.data)[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 tail(beijing.data)[] 
+ []
+
+
+Overfull \hbox (126.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 sum(is.na(beijing.data))[] 
+ []
+
+
+Overfull \hbox (210.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 aggr(beijing.data, prop = T, number = T)[] 
+ []
+
+
+Overfull \hbox (47.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 i <- NULL[] 
+ []
+
+
+Overfull \hbox (31.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 j <- 1[] 
+ []
+
+
+Overfull \hbox (105.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 compare_value_j <- 1[] 
+ []
+
+
+Overfull \hbox (115.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for ( i in 2010:2014){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 data_i <- beijing.data[beijing.data$year == i,][] 
+ []
+
+
+Overfull \hbox (288.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if (compare_value_j < length(na.omit(data_i$pm2.5))){[] 
+ []
+
+
+Overfull \hbox (273.0pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 compare_value_j <- length(na.omit(data_i$pm2.5))[] 
+ []
+
+
+Overfull \hbox (73.5pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 j <- j + 1[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 print(j + 2009) # the year will least missing value[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 beijing.data <- as_tibble(beijing.data)[] 
+ []
+
+
+Overfull \hbox (47.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 i <- NULL[] 
+ []
+
+
+Overfull \hbox (199.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for ( i in 1:length(beijing.data$No)){[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 3){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 1[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 4){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 1[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 5){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 1[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 6){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 2[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 7){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 2[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 8){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 2[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 9){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 3[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (178.5pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 10){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 3[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (178.5pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 11){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 3[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (178.5pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 12){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 4[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 1){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 4[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(beijing.data$month[i] == 2){[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 beijing.data$season[i] <- 4[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 head(beijing.data)[] 
+ []
+
+
+Overfull \hbox (714.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing <-select(beijing.data, c("year","month","day","hour","season","pm2.5","cbwd","Iws", "Is", "Ir","DEWP", "TEMP", "PRES")) %>%[] 
+ []
+
+
+Overfull \hbox (78.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 na.omit() %>%[] 
+ []
+
+
+Overfull \hbox (131.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 filter(year >= 2013)%>%[] 
+ []
+
+
+Overfull \hbox (378.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 unite(timebyday, c("year", "month", "day"), remove = FALSE, sep = "-")[] 
+ []
+
+
+Overfull \hbox (283.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 datatable(cleanbeijing, option = list(scrollX = TRUE))[] 
+ []
+
+
+Overfull \hbox (141.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 #calculate the PM2.5 by day[] 
+ []
+
+
+Overfull \hbox (115.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 daypm<-cleanbeijing%>%[] 
+ []
+
+
+Overfull \hbox (126.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 group_by(timebyday)%>%[] 
+ []
+
+
+Overfull \hbox (236.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 summarise(mean=mean(cleanbeijing$pm2.5))%>%[] 
+ []
+
+
+Overfull \hbox (68.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 as_tibble()[] 
+ []
+
+
+Overfull \hbox (147.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 #calculate the PM2.5 by year[] 
+ []
+
+
+Overfull \hbox (336.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing$quality <- ifelse(cleanbeijing$pm2.5 <= 50, "good",[] 
+ []
+
+
+Overfull \hbox (409.5pt too wide) in paragraph at lines 292--292
+[]                                 \TU/lmtt/m/n/10 ifelse(cleanbeijing$pm2.5 <= 100, "moderate",[] 
+ []
+
+
+Overfull \hbox (535.5pt too wide) in paragraph at lines 292--292
+[]                                        \TU/lmtt/m/n/10 ifelse(cleanbeijing$pm2.5 <= 300, "unhealthy", "posisonous")))[] 
+ []
+
+
+Overfull \hbox (152.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 qualitypm <- cleanbeijing %>%[] 
+ []
+
+
+Overfull \hbox (152.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 group_by(year, quality) %>%[] 
+ []
+
+
+Overfull \hbox (68.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 count() %>%[] 
+ []
+
+
+Overfull \hbox (68.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 as_tibble()[] 
+ []
+
+
+Overfull \hbox (598.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 ggplot(qualitypm, aes(x = factor(year) , y = n,fill = quality)) + geom_bar(stat = 'identity', position = 'dodge')+[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 theme(legend.title = element_blank())[] 
+ []
+
+
+Overfull \hbox (267.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 spring<-filter(cleanbeijing,cleanbeijing$season==1)[] 
+ []
+
+
+Overfull \hbox (267.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summer<-filter(cleanbeijing,cleanbeijing$season==2)[] 
+ []
+
+
+Overfull \hbox (267.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 autumn<-filter(cleanbeijing,cleanbeijing$season==3)[] 
+ []
+
+
+Overfull \hbox (267.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 winter<-filter(cleanbeijing,cleanbeijing$season==4)[] 
+ []
+
+
+./AppendixA.tex:292: LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 \end{verbatim}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1
+./AppendixA.tex:292: Undefined control sequence.
+<write> \newlabel{AppendixA}{{}{\thepage 
+                                         }}
+l.292 \end{verbatim}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{AppendixA}{{}{}}
+]
+Overfull \hbox (141.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 seasonpm<- cleanbeijing %>%[] 
+ []
+
+
+Overfull \hbox (152.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 group_by(season,quality)%>%[] 
+ []
+
+
+Overfull \hbox (63.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 count()%>%[] 
+ []
+
+
+Overfull \hbox (68.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 as_tibble()[] 
+ []
+
+
+Overfull \hbox (598.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 ggplot(seasonpm, aes(x = factor(season) , y = n,fill = quality)) + geom_bar(stat = 'identity', position = 'fill')+[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 theme(legend.title = element_blank())[] 
+ []
+
+
+Overfull \hbox (236.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 cleanbeijing <- as.data.frame(cleanbeijing)[] 
+ []
+
+
+Overfull \hbox (210.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing <- cleanbeijing[,-c(2,3,4)][] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 head(cleanbeijing)[] 
+ []
+
+
+Overfull \hbox (157.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 time <- cleanbeijing$timebyday[] 
+ []
+
+
+Overfull \hbox (320.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 time <- as.Date(as.POSIXct(ymd(time), origin = "2013-01-01"))[] 
+ []
+
+
+Overfull \hbox (157.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing$timebyday <- time[] 
+ []
+
+
+Overfull \hbox (315.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing$timestamp <- as.numeric(cleanbeijing$timebyday)[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 head(cleanbeijing)[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 tail(cleanbeijing)[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 #[] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # cleanbeijing <- cleanbeijing[,-c(2,3,4,5)][] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for (i in 1:length(cleanbeijing$timebyday)){[] 
+ []
+
+
+Overfull \hbox (183.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing$cbwd[i] == "NW"){[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing$cbwd_data[i] = 1[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (183.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing$cbwd[i] == "cv"){[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing$cbwd_data[i] = 2[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (183.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing$cbwd[i] == "NE"){[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing$cbwd_data[i] = 3[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (183.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing$cbwd[i] == "SE"){[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing$cbwd_data[i] = 4[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (735.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing_combin <- tapplydf(cleanbeijing, c("timestamp","season", "pm2.5", "Iws", "Is", "Ir", "DEWP", "TEMP","PRES"), "timebyday", mean)[] 
+ []
+
+
+Overfull \hbox (131.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 FindMode <- function(x) {[] 
+ []
+
+
+Overfull \hbox (99.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 ux <- unique(x)[] 
+ []
+
+
+Overfull \hbox (215.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 ux[which.max(tabulate(match(x, ux)))][] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (414.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # cleanbeijing_combin$cbwd_data <- rep(1,length(cleanbeijing_combin$timebyday))[] 
+ []
+
+
+Overfull \hbox (514.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data <-  tapply(cleanbeijing$cbwd_data, cleanbeijing$timebyday, FindMode)[] 
+ []
+
+
+Overfull \hbox (388.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data <- as.numeric(cleanbeijing_combin$cbwd_data)[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # cleanbeijing_combin <- cleanbeijing_combin[,-1][] 
+ []
+
+
+Overfull \hbox (351.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # lm.cleanbeijing_combin <- lm(pm2.5~., data = cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # summary(lm.cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (31.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 i <- 1[] 
+ []
+
+
+Overfull \hbox (273.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for ( i in 1:length(cleanbeijing_combin$timestamp)){[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 3){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Spring"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 4){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Spring"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 5){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Spring"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 6){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Summer"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 7){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Summer"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 8){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Summer"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 9){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Autumn"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (283.5pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 10){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Autumn"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (283.5pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 11){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Autumn"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (283.5pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 12){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Winter"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 1){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Winter"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (278.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 if(month(cleanbeijing_combin$timebyday)[i] == 2){[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]        \TU/lmtt/m/n/10 cleanbeijing_combin$season[i] <- "Winter"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (131.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 head(cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (372.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 # cleanbeijing_combin$cbwd_data <- floor(cleanbeijing_combin$cbwd_data)[] 
+ []
+
+
+Overfull \hbox (267.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for (i in 1:length(cleanbeijing_combin$timebyday)){[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing_combin$cbwd[i] == 1){[] 
+ []
+
+
+Overfull \hbox (225.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data[i] = "NW"[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing_combin$cbwd_data[i] == 2){[] 
+ []
+
+
+Overfull \hbox (225.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data[i] = "cv"[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing_combin$cbwd_data[i] == 3){[] 
+ []
+
+
+Overfull \hbox (225.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data[i] = "NE"[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (231.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(cleanbeijing_combin$cbwd_data[i] == 4){[] 
+ []
+
+
+Overfull \hbox (225.75pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 cleanbeijing_combin$cbwd_data[i] = "SE"[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (714.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.cleanbeijing_combin.nolog <- lm(pm2.5~timestamp + season +Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (194.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.cleanbeijing_combin.nolog)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (178.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.cleanbeijing_combin.nolog)[] 
+ []
+
+
+Overfull \hbox (63.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(car)[] 
+ []
+
+
+Overfull \hbox (273.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 a <- as.data.frame(cleanbeijing_combin[,-c(1,3,11)])[] 
+ []
+
+
+Overfull \hbox (31.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 cor(a)[] 
+ []
+
+
+Overfull \hbox (42.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 pairs(a)[] 
+ []
+
+
+Overfull \hbox (708.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.cleanbeijing_combin <- lm(log(pm2.5)~timestamp + season +Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (147.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (798.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.cleanbeijing_combin_interaction <- lm(log(pm2.5)~(timestamp + season + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data)^2, data = cleanbeijing_combin)[] 
+ []
+
+
+Overfull \hbox (225.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.cleanbeijing_combin_interaction)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (210.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.cleanbeijing_combin_interaction)[] 
+ []
+
+
+Overfull \hbox (477.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.cleanbeijing_combin_step <- step(lm.cleanbeijing_combin_interaction, direction = "both")[] 
+ []
+
+
+Overfull \hbox (189.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.cleanbeijing_combin_step)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.cleanbeijing_combin_step)[] 
+ []
+
+
+Overfull \hbox (404.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 winter_data<-filter(cleanbeijing_combin,cleanbeijing_combin$season=="Winter")[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 names(winter_data)[] 
+ []
+
+
+Overfull \hbox (582.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.winter.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = winter_data)[] 
+ []
+
+
+Overfull \hbox (120.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.winter.data)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (105.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.winter.data)[] 
+ []
+
+
+Overfull \hbox (404.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 Spring_data<-filter(cleanbeijing_combin,cleanbeijing_combin$season=="Spring")[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 names(Spring_data)[] 
+ []
+
+
+Overfull \hbox (582.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.spring.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = Spring_data)[] 
+ []
+
+
+Overfull \hbox (120.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.spring.data)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (105.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.spring.data)[] 
+ []
+
+
+Overfull \hbox (330.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 spring_winter <- as.data.frame(rbind(Spring_data, winter_data))[] 
+ []
+
+
+Overfull \hbox (105.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 names(spring_winter)[] 
+ []
+
+
+Overfull \hbox (236.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 for (i in 1:length(spring_winter$timebyday)){[] 
+ []
+
+
+Overfull \hbox (168.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(spring_winter$season == 1){[] 
+ []
+
+
+Overfull \hbox (199.5pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 spring_winter$season[i] = "Spring"[] 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (168.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 if(spring_winter$season == 4){[] 
+ []
+
+
+Overfull \hbox (210.0pt too wide) in paragraph at lines 292--292
+[]      \TU/lmtt/m/n/10 spring_winter$season[i] = "Winter"[] 
+ []
+
+
+Overfull \hbox (26.25pt too wide) in paragraph at lines 292--292
+[]    \TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (630.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lm.plus.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data + season, data = spring_winter)[] 
+ []
+
+
+Overfull \hbox (110.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 summary(lm.plus.data)[] 
+ []
+
+
+Overfull \hbox (89.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 par(mfrow=c(2,2))[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 plot(lm.plus.data)[] 
+ []
+
+
+Overfull \hbox (63.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(car)[] 
+ []
+
+
+Overfull \hbox (593.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 qqPlot(lm.winter.data, labels = row.names(winter_data), id.methods = "identify", simulate = T, main = "Q-Q plot")[] 
+ []
+
+
+Overfull \hbox (215.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 residplot <- function(fit, nbreaks = 10){[] 
+ []
+
+
+Overfull \hbox (105.0pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 z <- rstudent(fit)[] 
+ []
+
+
+Overfull \hbox (215.25pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 hist(z, breaks = nbreaks, freq = FALSE,[] 
+ []
+
+
+Overfull \hbox (194.25pt too wide) in paragraph at lines 292--292
+[]       \TU/lmtt/m/n/10 xlib = "Studentized Residual",[] 
+ []
+
+
+Overfull \hbox (204.75pt too wide) in paragraph at lines 292--292
+[]       \TU/lmtt/m/n/10 main = "Distribution of Errors")[] 
+ []
+
+
+Overfull \hbox (162.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 rug(jitter(z), col = "brown")[] 
+ []
+
+
+Overfull \hbox (414.75pt too wide) in paragraph at lines 292--292
+[]  \TU/lmtt/m/n/10 curve(dnorm(x), mean = mean(z), sd = sd(z), add = TRUE, col = "blue",lwd = 2)[] 
+ []
+
+
+Overfull \hbox (173.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 lines(density(z)$x, density(z)$y,[] 
+ []
+
+
+Overfull \hbox (178.5pt too wide) in paragraph at lines 292--292
+[]      \TU/lmtt/m/n/10 col="red", lwd = 2, lty = 2)[] 
+ []
+
+
+Overfull \hbox (94.5pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 legend("topright",[] 
+ []
+
+
+Overfull \hbox (304.5pt too wide) in paragraph at lines 292--292
+[]       \TU/lmtt/m/n/10 legend = c("Normal Curve", "Kernel Density Curve"),[] 
+ []
+
+
+Overfull \hbox (257.25pt too wide) in paragraph at lines 292--292
+[]       \TU/lmtt/m/n/10 lty = 1:2, col = c("blue", "red"), cex=.7)[] 
+ []
+
+
+Overfull \hbox (5.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 }[] 
+ []
+
+
+Overfull \hbox (131.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 residplot(lm.winter.data)[] 
+ []
+
+
+Overfull \hbox (63.0pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 library(car)[] 
+ []
+
+
+Overfull \hbox (120.75pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 ncvTest(lm.winter.data)[] 
+ []
+
+
+Overfull \hbox (152.25pt too wide) in paragraph at lines 292--292
+[]\TU/lmtt/m/n/10 spreadLevelPlot(lm.plus.data)[] 
+ []
+
+)
+! Emergency stop.
+<*> AppendixA.tex
+                 
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 12 strings out of 492970
+ 206 string characters out of 6133939
+ 88586 words of memory out of 5000000
+ 4115 multiletter control sequences out of 15000+600000
+ 3656 words of font info for 16 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 17i,4n,11p,168b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on AppendixA.xdv (1 page, 28956 bytes).

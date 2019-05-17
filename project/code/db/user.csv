@@ -1,0 +1,5 @@
+StudentId,Name,Password,IsAdmin,TimesBorrowed,NumBorrowed,Group_Quantity
+PB00000000,管理员,2c2f0322f95d293a12185a21387dbac8,1,0,0,0
+PB15000135,俞晨东,2c2f0322f95d293a12185a21387dbac8,0,4,3,1
+PB15000137,高云凯,f4cb63a3a73516a8e699056765cd72ca,0,0,0,0
+l630005038,TerenceLau,1d1078bbc960d17b57fadb143cd890e8,0,0,0,0

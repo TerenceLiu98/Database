@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "Chapter4.xdv" "Chapter4.pdf" "Chapter4" 0
+  "Chapter4.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "Chapter4.pdf"
+["xelatex"] 1544688839 "Chapter4.tex" "Chapter4.xdv" "Chapter4" 1544688840
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1531133196 3731936 0ca4516599e52bf85086c1277d501b90 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "Chapter4.aux" 1544688354 6223 296a5424992f948e1fc55f4b022372a2 ""
+  "Chapter4.tex" 1544688839 4446 029f1b5732d2086092411d43988be160 ""
+  (generated)
+  "Chapter4.xdv"
+  "Chapter4.log"

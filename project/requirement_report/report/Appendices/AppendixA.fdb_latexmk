@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 1544689344 "AppendixA.xdv" "AppendixA.pdf" "AppendixA" 1544689345
+  "AppendixA.xdv" 1544689344 28956 aa2e630076ddf52a3ceb74b59a2825a6 "xelatex"
+  (generated)
+  "AppendixA.pdf"
+["xelatex"] 1544689344 "AppendixA.tex" "AppendixA.xdv" "AppendixA" 1544689345
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1531133196 3731936 0ca4516599e52bf85086c1277d501b90 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "AppendixA.aux" 1544688965 4179 9a037e20ce05720f1d134d25af25e359 ""
+  "AppendixA.tex" 1544689344 9450 dd017614ed9829cb0af411d57ff45bc2 ""
+  (generated)
+  "AppendixA.xdv"
+  "AppendixA.log"

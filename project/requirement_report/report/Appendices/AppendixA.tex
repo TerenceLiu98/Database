@@ -1,0 +1,292 @@
+% Appendix A
+
+\chapter{R Code} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+The color of links can be changed to your liking using:
+\begin{verbatim}
+  library(VIM) # function aggr: visualize the missing value
+library(tidyverse) #To use ggplot2, tidyr, dplyr
+library(plotly) #To create interactive plots
+library(DT) #To display the data
+library(magrittr) #To pipe operators
+library(ggplot2) #To make and customize quickly plots
+library(devtools) #To Make Developing R Packages Easier
+library(lubridate) # date tranformation
+library(beginr)
+
+beijing.data <- read.csv("PRSA_data_2010.1.1-2014.12.31.csv", header = T) # load the data set
+head(beijing.data)
+tail(beijing.data)
+
+sum(is.na(beijing.data))
+aggr(beijing.data, prop = T, number = T)
+
+i <- NULL
+j <- 1
+compare_value_j <- 1
+for ( i in 2010:2014){
+  data_i <- beijing.data[beijing.data$year == i,]
+  if (compare_value_j < length(na.omit(data_i$pm2.5))){
+    compare_value_j <- length(na.omit(data_i$pm2.5))
+    j <- j + 1
+  }
+  print(j + 2009) # the year will least missing value
+}
+beijing.data <- as_tibble(beijing.data)
+
+i <- NULL
+for ( i in 1:length(beijing.data$No)){
+  if(beijing.data$month[i] == 3){
+    beijing.data$season[i] <- 1
+  }
+  if(beijing.data$month[i] == 4){
+    beijing.data$season[i] <- 1
+  }
+  if(beijing.data$month[i] == 5){
+    beijing.data$season[i] <- 1
+  }
+  if(beijing.data$month[i] == 6){
+    beijing.data$season[i] <- 2
+  }
+  if(beijing.data$month[i] == 7){
+    beijing.data$season[i] <- 2
+  }
+  if(beijing.data$month[i] == 8){
+    beijing.data$season[i] <- 2
+  }
+  if(beijing.data$month[i] == 9){
+    beijing.data$season[i] <- 3
+  }
+  if(beijing.data$month[i] == 10){
+    beijing.data$season[i] <- 3
+  }
+  if(beijing.data$month[i] == 11){
+    beijing.data$season[i] <- 3
+  }
+  if(beijing.data$month[i] == 12){
+    beijing.data$season[i] <- 4
+  }
+  if(beijing.data$month[i] == 1){
+    beijing.data$season[i] <- 4
+  }
+  if(beijing.data$month[i] == 2){
+    beijing.data$season[i] <- 4
+  }
+}
+head(beijing.data)
+
+cleanbeijing <-select(beijing.data, c("year","month","day","hour","season","pm2.5","cbwd","Iws", "Is", "Ir","DEWP", "TEMP", "PRES")) %>%
+  na.omit() %>%
+  filter(year >= 2013)%>%
+  unite(timebyday, c("year", "month", "day"), remove = FALSE, sep = "-")
+datatable(cleanbeijing, option = list(scrollX = TRUE))
+
+#calculate the PM2.5 by day
+daypm<-cleanbeijing%>%
+  group_by(timebyday)%>%
+  summarise(mean=mean(cleanbeijing$pm2.5))%>%
+  as_tibble()
+#calculate the PM2.5 by year
+cleanbeijing$quality <- ifelse(cleanbeijing$pm2.5 <= 50, "good",
+                                 ifelse(cleanbeijing$pm2.5 <= 100, "moderate",
+                                        ifelse(cleanbeijing$pm2.5 <= 300, "unhealthy", "posisonous")))
+qualitypm <- cleanbeijing %>%
+  group_by(year, quality) %>%
+  count() %>%
+  as_tibble()
+
+ggplot(qualitypm, aes(x = factor(year) , y = n,fill = quality)) + geom_bar(stat = 'identity', position = 'dodge')+
+  theme(legend.title = element_blank())
+
+
+spring<-filter(cleanbeijing,cleanbeijing$season==1)
+summer<-filter(cleanbeijing,cleanbeijing$season==2)
+autumn<-filter(cleanbeijing,cleanbeijing$season==3)
+winter<-filter(cleanbeijing,cleanbeijing$season==4)
+
+seasonpm<- cleanbeijing %>%
+  group_by(season,quality)%>%
+  count()%>%
+  as_tibble()
+
+ggplot(seasonpm, aes(x = factor(season) , y = n,fill = quality)) + geom_bar(stat = 'identity', position = 'fill')+
+  theme(legend.title = element_blank())
+
+  cleanbeijing <- as.data.frame(cleanbeijing)
+cleanbeijing <- cleanbeijing[,-c(2,3,4)]
+head(cleanbeijing)
+time <- cleanbeijing$timebyday
+time <- as.Date(as.POSIXct(ymd(time), origin = "2013-01-01"))
+cleanbeijing$timebyday <- time
+cleanbeijing$timestamp <- as.numeric(cleanbeijing$timebyday)
+head(cleanbeijing)
+tail(cleanbeijing)
+#
+# cleanbeijing <- cleanbeijing[,-c(2,3,4,5)]
+
+for (i in 1:length(cleanbeijing$timebyday)){
+  if(cleanbeijing$cbwd[i] == "NW"){
+    cleanbeijing$cbwd_data[i] = 1
+  }
+  if(cleanbeijing$cbwd[i] == "cv"){
+    cleanbeijing$cbwd_data[i] = 2
+  }
+  if(cleanbeijing$cbwd[i] == "NE"){
+    cleanbeijing$cbwd_data[i] = 3
+  }
+  if(cleanbeijing$cbwd[i] == "SE"){
+    cleanbeijing$cbwd_data[i] = 4
+  }
+}
+
+cleanbeijing_combin <- tapplydf(cleanbeijing, c("timestamp","season", "pm2.5", "Iws", "Is", "Ir", "DEWP", "TEMP","PRES"), "timebyday", mean)
+
+FindMode <- function(x) {
+    ux <- unique(x)
+    ux[which.max(tabulate(match(x, ux)))]
+}
+# cleanbeijing_combin$cbwd_data <- rep(1,length(cleanbeijing_combin$timebyday))
+
+
+cleanbeijing_combin$cbwd_data <-  tapply(cleanbeijing$cbwd_data, cleanbeijing$timebyday, FindMode)
+cleanbeijing_combin$cbwd_data <- as.numeric(cleanbeijing_combin$cbwd_data)
+# cleanbeijing_combin <- cleanbeijing_combin[,-1]
+# lm.cleanbeijing_combin <- lm(pm2.5~., data = cleanbeijing_combin)
+# summary(lm.cleanbeijing_combin)
+
+i <- 1
+for ( i in 1:length(cleanbeijing_combin$timestamp)){
+    if(month(cleanbeijing_combin$timebyday)[i] == 3){
+        cleanbeijing_combin$season[i] <- "Spring"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 4){
+        cleanbeijing_combin$season[i] <- "Spring"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 5){
+        cleanbeijing_combin$season[i] <- "Spring"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 6){
+        cleanbeijing_combin$season[i] <- "Summer"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 7){
+        cleanbeijing_combin$season[i] <- "Summer"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 8){
+        cleanbeijing_combin$season[i] <- "Summer"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 9){
+        cleanbeijing_combin$season[i] <- "Autumn"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 10){
+        cleanbeijing_combin$season[i] <- "Autumn"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 11){
+        cleanbeijing_combin$season[i] <- "Autumn"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 12){
+        cleanbeijing_combin$season[i] <- "Winter"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 1){
+        cleanbeijing_combin$season[i] <- "Winter"
+    }
+    if(month(cleanbeijing_combin$timebyday)[i] == 2){
+        cleanbeijing_combin$season[i] <- "Winter"
+    }
+}
+head(cleanbeijing_combin)
+
+# cleanbeijing_combin$cbwd_data <- floor(cleanbeijing_combin$cbwd_data)
+for (i in 1:length(cleanbeijing_combin$timebyday)){
+  if(cleanbeijing_combin$cbwd[i] == 1){
+    cleanbeijing_combin$cbwd_data[i] = "NW"
+  }
+  if(cleanbeijing_combin$cbwd_data[i] == 2){
+    cleanbeijing_combin$cbwd_data[i] = "cv"
+  }
+  if(cleanbeijing_combin$cbwd_data[i] == 3){
+    cleanbeijing_combin$cbwd_data[i] = "NE"
+  }
+  if(cleanbeijing_combin$cbwd_data[i] == 4){
+    cleanbeijing_combin$cbwd_data[i] = "SE"
+  }
+}
+
+lm.cleanbeijing_combin.nolog <- lm(pm2.5~timestamp + season +Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = cleanbeijing_combin)
+summary(lm.cleanbeijing_combin.nolog)
+par(mfrow=c(2,2))
+plot(lm.cleanbeijing_combin.nolog)
+
+library(car)
+a <- as.data.frame(cleanbeijing_combin[,-c(1,3,11)])
+cor(a)
+pairs(a)
+
+lm.cleanbeijing_combin <- lm(log(pm2.5)~timestamp + season +Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = cleanbeijing_combin)
+summary(lm.cleanbeijing_combin)
+par(mfrow=c(2,2))
+plot(lm.cleanbeijing_combin)
+
+lm.cleanbeijing_combin_interaction <- lm(log(pm2.5)~(timestamp + season + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data)^2, data = cleanbeijing_combin)
+summary(lm.cleanbeijing_combin_interaction)
+par(mfrow=c(2,2))
+plot(lm.cleanbeijing_combin_interaction)
+
+lm.cleanbeijing_combin_step <- step(lm.cleanbeijing_combin_interaction, direction = "both")
+summary(lm.cleanbeijing_combin_step)
+par(mfrow=c(2,2))
+plot(lm.cleanbeijing_combin_step)
+
+winter_data<-filter(cleanbeijing_combin,cleanbeijing_combin$season=="Winter")
+names(winter_data)
+lm.winter.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = winter_data)
+summary(lm.winter.data)
+par(mfrow=c(2,2))
+plot(lm.winter.data)
+
+Spring_data<-filter(cleanbeijing_combin,cleanbeijing_combin$season=="Spring")
+names(Spring_data)
+lm.spring.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = Spring_data)
+summary(lm.spring.data)
+par(mfrow=c(2,2))
+plot(lm.spring.data)
+
+spring_winter <- as.data.frame(rbind(Spring_data, winter_data))
+names(spring_winter)
+
+for (i in 1:length(spring_winter$timebyday)){
+  if(spring_winter$season == 1){
+    spring_winter$season[i] = "Spring"
+  }
+  if(spring_winter$season == 4){
+      spring_winter$season[i] = "Winter"
+    }
+}
+lm.plus.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data + season, data = spring_winter)
+summary(lm.plus.data)
+par(mfrow=c(2,2))
+plot(lm.plus.data)
+
+library(car)
+qqPlot(lm.winter.data, labels = row.names(winter_data), id.methods = "identify", simulate = T, main = "Q-Q plot")
+
+residplot <- function(fit, nbreaks = 10){
+  z <- rstudent(fit)
+  hist(z, breaks = nbreaks, freq = FALSE,
+       xlib = "Studentized Residual",
+       main = "Distribution of Errors")
+  rug(jitter(z), col = "brown")
+  curve(dnorm(x), mean = mean(z), sd = sd(z), add = TRUE, col = "blue",lwd = 2)
+lines(density(z)$x, density(z)$y,
+      col="red", lwd = 2, lty = 2)
+legend("topright",
+       legend = c("Normal Curve", "Kernel Density Curve"),
+       lty = 1:2, col = c("blue", "red"), cex=.7)
+}
+residplot(lm.winter.data)
+
+library(car)
+ncvTest(lm.winter.data)
+spreadLevelPlot(lm.plus.data)
+\end{verbatim}
