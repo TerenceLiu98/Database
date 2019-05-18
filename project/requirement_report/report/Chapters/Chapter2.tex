@@ -1,26 +1,20 @@
 % Chapter Template
 
-\chapter{Data Pre-processing} % Main chapter title
+\chapter{System Implement} % Main chapter title
 
 \label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-\section{Missing Values}
+\section{System Structure}
 
-At the very beginning, the figure below shows the head of the original data set.
-
-\begin{figure}[htbp!]
-\centering
-\includegraphics[width=1.0\textwidth]{Figures/origindata.png}
-\caption[Figures/origindata.png]{Origin Data Set}
-\label{fig:Origin data Set}
-\end{figure}
+According to the actual needs of the library management system, the library management system can be divided into system management, reader management, library management, borrowing management, query, book ranking, and the specific functions of the various parts of the system module architecture diagram shown in \fig{Origni data Set} .
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[width=1.0\textwidth]{Figures/missing.png}
-\caption[Figures/missing.png]{Visualization of Missing Value}
-\label{fig:missing}
+\includegraphics[width=1.0\textwidth]{Figures/structure.png}
+\caption[Figures/origindata.png]{System Structure}
+\label{fig:System Structure}
 \end{figure}
+
 
 The data set we chosen is from the UCI Machine Learning Repository datasets, it has collected Beijing PM2.5 data from 2010 to 2014. In this data sets, its collection is based on hours, and from the original data set we can see that there are lots of missing value (approximately $4.7\%$ data of PM2.5 are missing). We need to delete the missing data. In order to reduce the impact of deleting missing values on data, we select the data of the fourth year and fifth year, namely 2013 and 2014 respectively.
 

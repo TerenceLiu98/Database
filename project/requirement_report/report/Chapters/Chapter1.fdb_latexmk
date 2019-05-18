@@ -3,16 +3,12 @@
   "Chapter1.xdv" 0 -1 0 "xelatex"
   (generated)
   "Chapter1.pdf"
-["xelatex"] 1558132089 "Chapter1.tex" "Chapter1.xdv" "Chapter1" 1558132089
-  "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
-  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
-  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm" 1480098701 1332 f817c21a1ba54560425663374f1b651a ""
-  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1480098701 1336 3125ccb448c1a09074e3aa4a9832f130 ""
+["xelatex"] 1558134572 "Chapter1.tex" "Chapter1.xdv" "Chapter1" 1558134573
   "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
   "/usr/local/texlive/2018/texmf-var/web2c/xetex/xelatex.fmt" 1554472797 3731942 537051c697fb827b465296d1d627f5f5 ""
   "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
-  "Chapter1.aux" 1558131075 4308 62ac9773404e1c18b5f302ca08dba752 ""
-  "Chapter1.tex" 1558132088 4252 03880525e250f8694c822eb6412a583a ""
+  "Chapter1.aux" 1558134514 4574 54308f0041006f176e176d28c0551f49 ""
+  "Chapter1.tex" 1558134572 3641 52d88cc49227aa7fe9c5a75c11e74108 ""
   (generated)
-  "Chapter1.xdv"
   "Chapter1.log"
+  "Chapter1.xdv"

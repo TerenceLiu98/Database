@@ -2,11 +2,11 @@
 \BOOKMARK [0][-]{section*.2}{Abstract}{}% 2
 \BOOKMARK [0][-]{chapter.5}{Introduction}{}% 3
 \BOOKMARK [1][-]{section.6}{Background}{chapter.5}% 4
-\BOOKMARK [1][-]{section.7}{Objective\040of\040OPAC}{chapter.5}% 5
-\BOOKMARK [1][-]{section.8}{Multiple\040Regression\040Estimation}{chapter.5}% 6
-\BOOKMARK [0][-]{chapter.9}{Data\040Pre-processing}{}% 7
-\BOOKMARK [1][-]{section.10}{Missing\040Values}{chapter.9}% 8
-\BOOKMARK [1][-]{section.13}{Time\040Data\040Processing}{chapter.9}% 9
+\BOOKMARK [1][-]{section.7}{System's\040Objective}{chapter.5}% 5
+\BOOKMARK [1][-]{section.8}{Introduction\040to\040system\040flow}{chapter.5}% 6
+\BOOKMARK [0][-]{chapter.10}{System\040Implement}{}% 7
+\BOOKMARK [1][-]{section.11}{System\040Structure}{chapter.10}% 8
+\BOOKMARK [1][-]{section.13}{Time\040Data\040Processing}{chapter.10}% 9
 \BOOKMARK [0][-]{chapter.15}{Original\040Data\040Analysis}{}% 10
 \BOOKMARK [1][-]{section.16}{Full\040Model\040Estimation}{chapter.15}% 11
 \BOOKMARK [1][-]{section.19}{Model\040with\040Natural\040Logrithm}{chapter.15}% 12

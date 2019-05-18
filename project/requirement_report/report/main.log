@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.5)  18 MAY 2019 06:11
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.5)  18 MAY 2019 08:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1511,7 +1511,7 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
 ./main.lof:18: Missing $ inserted.
 <inserted text> 
                 $
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1519,7 +1519,7 @@ you left one out. Proceed, with fingers crossed.
 ./main.lof:18: Extra }, or forgotten $.
 <argument> ...ignorespaces Figures/ncv_spread.png}
                                                   }\hyper@linkend 
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1530,7 +1530,7 @@ deleted material, e.g., by typing `I$}'.
 ./main.lof:18: Extra }, or forgotten $.
 <argument> ...gnorespaces Figures/ncv_spread.png}}
                                                   \hyper@linkend 
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1541,7 +1541,7 @@ deleted material, e.g., by typing `I$}'.
 ./main.lof:18: Missing $ inserted.
 <inserted text> 
                 $
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1552,7 +1552,7 @@ my insertion and my current dilemma will both disappear.
 ./main.lof:18: Missing } inserted.
 <inserted text> 
                 }
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1563,7 +1563,7 @@ my insertion and my current dilemma will both disappear.
 ./main.lof:18: Missing } inserted.
 <inserted text> 
                 }
-l.18 ...es/ncv_spread.png}}{12}{figure.caption.30}
+l.18 ...res/ncv_spread.png}}{9}{figure.caption.30}
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1594,6 +1594,8 @@ Overfull \hbox (4.69617pt too wide) in paragraph at lines 19--25
 \T1/ppl/m/n/10.95 sys-tem. Fo-cus-ing on the tech-ni-cal per-spec-tive, the plan-ning of the small and medium-
  []
 
+File: Figures/Flowchart.png Graphic file (type bmp)
+<Figures/Flowchart.png>
 1: section
 [1
 
@@ -1603,16 +1605,47 @@ Overfull \hbox (4.69617pt too wide) in paragraph at lines 19--25
 
  (./Chapters/Chapter2.tex
 Chapter 2.
-File: Figures/origindata.png Graphic file (type bmp)
-<Figures/origindata.png>
-File: Figures/missing.png Graphic file (type bmp)
-<Figures/missing.png>
+./Chapters/Chapter2.tex:9: Undefined control sequence.
+l.9 ...m module architecture diagram shown in \fig
+                                                  {Origni data Set} .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: Figures/structure.png Graphic file (type bmp)
+<Figures/structure.png>
 1: section
 [3
 
 
 
 ]
+
+LaTeX Warning: File `Figures/newdata.png' not found on input line 35.
+
+./Chapters/Chapter2.tex:35: Unable to load picture or PDF file 'Figures/newdata.png'.
+<to be read again> 
+                   }
+l.35 ...[width=1.0\textwidth]{Figures/newdata.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter2.tex:35: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 ...[width=1.0\textwidth]{Figures/newdata.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/newdata.png Graphic file (type bmp)
 <Figures/newdata.png>
 ) [4]
@@ -2106,14 +2139,32 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+LaTeX Warning: File `Figures/correlationfull.png' not found on input line 52.
+
+./Chapters/Chapter3.tex:52: Unable to load picture or PDF file 'Figures/correlationfull.png'.
+<to be read again> 
+                   }
+l.52 ....0\textwidth]{Figures/correlationfull.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter3.tex:52: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 ....0\textwidth]{Figures/correlationfull.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/correlationfull.png Graphic file (type bmp)
 <Figures/correlationfull.png>
-1: section
-[5
-
-
-
-]
 ./Chapters/Chapter3.tex:60: Undefined control sequence.
 l.60 ...d 'Residuals vs Leverage' plot: See \refeq
                                                   {fig:Testing Plots of Full...
@@ -2123,12 +2174,41 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+1: section
+[5
+
+
+
+]
+
+LaTeX Warning: File `Figures/lm_full.png' not found on input line 63.
+
+./Chapters/Chapter3.tex:63: Unable to load picture or PDF file 'Figures/lm_full.png'.
+<to be read again> 
+                   }
+l.63 ...[width=1.0\textwidth]{Figures/lm_full.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter3.tex:63: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 ...[width=1.0\textwidth]{Figures/lm_full.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/lm_full.png Graphic file (type bmp)
 <Figures/lm_full.png>
 Missing character: There is no ’ in font pplr8t!
 Missing character: There is no ’ in font pplr8t!
 Missing character: There is no ’ in font pplr8t!
-[6]
 
 ./Chapters/Chapter3.tex:75: LaTeX Error: Environment align* undefined.
 
@@ -2586,9 +2666,32 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
+
+LaTeX Warning: File `Figures/lm_full_nl.png' not found on input line 84.
+
+./Chapters/Chapter3.tex:84: Unable to load picture or PDF file 'Figures/lm_full_nl.png'.
+<to be read again> 
+                   }
+l.84 ...dth=1.0\textwidth]{Figures/lm_full_nl.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter3.tex:84: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 ...dth=1.0\textwidth]{Figures/lm_full_nl.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/lm_full_nl.png Graphic file (type bmp)
 <Figures/lm_full_nl.png>
-[7]
 
 ./Chapters/Chapter3.tex:96: LaTeX Error: Environment align* undefined.
 
@@ -3046,6 +3149,30 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
+
+LaTeX Warning: File `Figures/lm_full_in.png' not found on input line 104.
+
+./Chapters/Chapter3.tex:104: Unable to load picture or PDF file 'Figures/lm_full_in.png'.
+<to be read again> 
+                   }
+l.104 ...th=1.0\textwidth]{Figures/lm_full_in.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter3.tex:104: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.104 ...th=1.0\textwidth]{Figures/lm_full_in.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/lm_full_in.png Graphic file (type bmp)
 <Figures/lm_full_in.png>
 
@@ -3063,6 +3190,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--107
 
  []
 
+[6]
 
 ./Chapters/Chapter3.tex:117: LaTeX Error: Environment align* undefined.
 
@@ -3108,6 +3236,30 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
+
+LaTeX Warning: File `Figures/lm_full_in_step.png' not found on input line 129.
+
+./Chapters/Chapter3.tex:129: Unable to load picture or PDF file 'Figures/lm_full_in_step.png'.
+<to be read again> 
+                   }
+l.129 ...0\textwidth]{Figures/lm_full_in_step.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter3.tex:129: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 ...0\textwidth]{Figures/lm_full_in_step.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/lm_full_in_step.png Graphic file (type bmp)
 <Figures/lm_full_in_step.png>
 
@@ -3115,10 +3267,10 @@ Overfull \hbox (9.49333pt too wide) in paragraph at lines 119--132
 []\T1/ppl/m/n/10.95 log(pm2.5) = times-tamp + sea-son + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd$[]\OML/zplm/m/it/10.95 ata \OT1/zplm/m/n/10.95 +
  []
 
-[8]) [9]
+) [7]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [10
+ (./Chapters/Chapter4.tex [8
 
 
 
@@ -3133,12 +3285,58 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+LaTeX Warning: File `Figures/coef_full.png' not found on input line 11.
+
+./Chapters/Chapter4.tex:11: Unable to load picture or PDF file 'Figures/coef_full.png'.
+<to be read again> 
+                   }
+l.11 ...th = 1.0\textwidth]{Figures/coef_full.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:11: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...th = 1.0\textwidth]{Figures/coef_full.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/coef_full.png Graphic file (type bmp)
 <Figures/coef_full.png>
+
+LaTeX Warning: File `Figures/spring_winter.png' not found on input line 20.
+
+./Chapters/Chapter4.tex:20: Unable to load picture or PDF file 'Figures/spring_winter.png'.
+<to be read again> 
+                   }
+l.20 ... 1.0\textwidth]{Figures/spring_winter.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:20: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 ... 1.0\textwidth]{Figures/spring_winter.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/spring_winter.png Graphic file (type bmp)
 <Figures/spring_winter.png>
-1: section
-[11]
 ./Chapters/Chapter4.tex:26: Undefined control sequence.
 l.26 ...ed power transformation is 0.381492.\citeq
                                                   {Kabacoff2015} See: \refeq...
@@ -3157,18 +3355,138 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+LaTeX Warning: File `Figures/ncv.png' not found on input line 30.
+
+./Chapters/Chapter4.tex:30: Unable to load picture or PDF file 'Figures/ncv.png'.
+<to be read again> 
+                   }
+l.30 ...cs[width = 1.0\textwidth]{Figures/ncv.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:30: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...cs[width = 1.0\textwidth]{Figures/ncv.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/ncv.png Graphic file (type bmp)
 <Figures/ncv.png>
+
+LaTeX Warning: File `Figures/ncv_spread.png' not found on input line 37.
+
+./Chapters/Chapter4.tex:37: Unable to load picture or PDF file 'Figures/ncv_spread.png'.
+<to be read again> 
+                   }
+l.37 ...h = 1.0\textwidth]{Figures/ncv_spread.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:37: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 ...h = 1.0\textwidth]{Figures/ncv_spread.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/ncv_spread.png Graphic file (type bmp)
 <Figures/ncv_spread.png>
+
+LaTeX Warning: File `Figures/spread.png' not found on input line 44.
+
+./Chapters/Chapter4.tex:44: Unable to load picture or PDF file 'Figures/spread.png'.
+<to be read again> 
+                   }
+l.44 ...width = 1.0\textwidth]{Figures/spread.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:44: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 ...width = 1.0\textwidth]{Figures/spread.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/spread.png Graphic file (type bmp)
 <Figures/spread.png>
-[12]
+
+LaTeX Warning: File `Figures/spring_winter_nl.png' not found on input line 53.
+
+./Chapters/Chapter4.tex:53: Unable to load picture or PDF file 'Figures/spring_winter_nl.png'.
+<to be read again> 
+                   }
+l.53 ...0\textwidth]{Figures/spring_winter_nl.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:53: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 ...0\textwidth]{Figures/spring_winter_nl.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/spring_winter_nl.png Graphic file (type bmp)
 <Figures/spring_winter_nl.png>
+1: section
+[9]
+
+LaTeX Warning: File `Figures/winter_nl.png' not found on input line 62.
+
+./Chapters/Chapter4.tex:62: Unable to load picture or PDF file 'Figures/winter_nl.png'.
+<to be read again> 
+                   }
+l.62 ...th = 1.0\textwidth]{Figures/winter_nl.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:62: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 ...th = 1.0\textwidth]{Figures/winter_nl.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/winter_nl.png Graphic file (type bmp)
 <Figures/winter_nl.png>
- [13]
 
 ./Chapters/Chapter4.tex:69: LaTeX Error: Environment align* undefined.
 
@@ -3219,26 +3537,73 @@ Overfull \hbox (20.05838pt too wide) in paragraph at lines 70--73
 []\T1/ppl/m/n/10.95 log(pm2.5) = $\OML/zplm/m/it/10.95 ^^L[]timestamp \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]Iws \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]Is \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]Ir \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]DEWP \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]TEMP \OT1/zplm/m/n/10.95 + \OML/zplm/m/it/10.95 ^^L[]PRES \OT1/zplm/m/n/10.95 +
  []
 
+
+LaTeX Warning: File `Figures/QQ.png' not found on input line 79.
+
+./Chapters/Chapter4.tex:79: Unable to load picture or PDF file 'Figures/QQ.png'.
+<to be read again> 
+                   }
+l.79 ...ics[width = 1.0\textwidth]{Figures/QQ.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:79: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.79 ...ics[width = 1.0\textwidth]{Figures/QQ.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/QQ.png Graphic file (type bmp)
 <Figures/QQ.png>
-[14]
+
+LaTeX Warning: File `Figures/density.png' not found on input line 89.
+
+./Chapters/Chapter4.tex:89: Unable to load picture or PDF file 'Figures/density.png'.
+<to be read again> 
+                   }
+l.89 ...idth = 1.0\textwidth]{Figures/density.png}
+                                                  
+The requested image couldn't be read because
+it was not a recognized image format.
+
+
+./Chapters/Chapter4.tex:89: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 ...idth = 1.0\textwidth]{Figures/density.png}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 File: Figures/density.png Graphic file (type bmp)
 <Figures/density.png>
-) [15]
+) [10]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (./Chapters/Chapter5.tex [16
+ (./Chapters/Chapter5.tex
+Chapter 5.
+)
+1: section
+[11
 
 
 
 ]
-Chapter 5.
-)
-1: section
-[17]
 \openout2 = `Appendices/AppendixA.aux'.
 
- (./Appendices/AppendixA.tex [18
+ (./Appendices/AppendixA.tex [12
 
 
 
@@ -3253,7 +3618,7 @@ Overfull \hbox (130.60313pt too wide) in paragraph at lines 292--292
  []
 
 1: section
-[19]
+[13]
 Overfull \hbox (377.79868pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 cleanbeijing <-select(beijing.data, c("year","month","day","hour","season","pm2.5","cbwd","Iws", "Is", "Ir","DEWP", "TEMP", "PRES")) %>%[] 
  []
@@ -3273,7 +3638,7 @@ Overfull \hbox (182.34174pt too wide) in paragraph at lines 292--292
 []                                        \T1/lmtt/m/n/10.95 ifelse(cleanbeijing$pm2.5 <= 300, "unhealthy", "posisonous")))[] 
  []
 
-[20]
+[14]
 Overfull \hbox (251.32654pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 ggplot(qualitypm, aes(x = factor(year) , y = n,fill = quality)) + geom_bar(stat = 'identity', position = 'dodge')+[] 
  []
@@ -3293,7 +3658,7 @@ Overfull \hbox (50.12086pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 # cleanbeijing_combin$cbwd_data <- rep(1,length(cleanbeijing_combin$timebyday))[] 
  []
 
-[21]
+[15]
 Overfull \hbox (159.3468pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 cleanbeijing_combin$cbwd_data <-  tapply(cleanbeijing$cbwd_data, cleanbeijing$timebyday, FindMode)[] 
  []
@@ -3308,7 +3673,7 @@ Overfull \hbox (4.131pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 # cleanbeijing_combin$cbwd_data <- floor(cleanbeijing_combin$cbwd_data)[] 
  []
 
-[22]
+[16]
 Overfull \hbox (377.79868pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 lm.cleanbeijing_combin.nolog <- lm(pm2.5~timestamp + season +Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = cleanbeijing_combin)[] 
  []
@@ -3348,7 +3713,7 @@ Overfull \hbox (234.08034pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 lm.spring.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data, data = Spring_data)[] 
  []
 
-[23]
+[17]
 Overfull \hbox (285.81894pt too wide) in paragraph at lines 292--292
 []\T1/lmtt/m/n/10.95 lm.plus.data <- lm(log(pm2.5)~timestamp + Iws + Is + Ir + DEWP + TEMP + PRES + cbwd_data + season, data = spring_winter)[] 
  []
@@ -3363,14 +3728,14 @@ Overfull \hbox (50.12086pt too wide) in paragraph at lines 292--292
 []  \T1/lmtt/m/n/10.95 curve(dnorm(x), mean = mean(z), sd = sd(z), add = TRUE, col = "blue",lwd = 2)[] 
  []
 
-) [24]
+) [18]
 Overfull \hbox (1.11743pt too wide) in paragraph at lines 276--276
 \T1/ppl/m/n/10.95 face bright-ness tem-per-a-tures^^Q. In: \T1/ppl/m/it/10.95 IEEE Trans-ac-tions on Geo-science and Re-mote Sens-
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
 1: section
-[25
+[19
 
 
 ]
@@ -3379,18 +3744,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 280.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D9CB0C00BFD824260FF0CD68FF91568C.
+(rerunfilecheck)             Checksum: DDA9118D8CEFFA514B5174936D6FCED7.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33485 strings out of 492970
- 687726 string characters out of 6133939
- 955771 words of memory out of 5000000
- 37141 multiletter control sequences out of 15000+600000
- 570227 words of font info for 83 fonts, out of 8000000 for 9000
+ 33480 strings out of 492970
+ 687672 string characters out of 6133939
+ 956771 words of memory out of 5000000
+ 37136 multiletter control sequences out of 15000+600000
+ 568683 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,20n,76p,10377b,4570s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,19n,82p,10377b,4570s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (35 pages, 85376 bytes).
+Output written on main.xdv (29 pages, 80640 bytes).
