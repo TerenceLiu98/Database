@@ -146,7 +146,7 @@ class dropBookDialog(QDialog):
         sql = "SELECT * FROM Book WHERE BookId='%s'" % (bookId)
         query.exec_(sql)
         if (query.next()):
-            if (dropNum > query.value(7) or dropNum < 0):
+            if (str(dropNum) > str(query.value(7)) or str(dropNum) < str(0)):
                 print(QMessageBox.warning(self, "Alert", "Only %d books" % (query.value(7)), QMessageBox.Yes,
                                           QMessageBox.Yes))
                 return

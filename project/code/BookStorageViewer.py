@@ -97,7 +97,6 @@ class BookStorageViewer(QWidget):
         self.queryModel.setHeaderData(4, Qt.Horizontal, "Category")
         self.queryModel.setHeaderData(5, Qt.Horizontal, "Press")
         self.queryModel.setHeaderData(6, Qt.Horizontal, "Date")
-        self.queryModel.setHeaderData(7, Qt.Horizontal, "reserve")
         self.queryModel.setHeaderData(9, Qt.Horizontal, "times")
 
         self.layout.addLayout(self.Hlayout1)
